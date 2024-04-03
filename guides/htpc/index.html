@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765414807021">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765429515718">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.765414807021" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.765429515718" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.765414807021" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.765429515718" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.765414807021" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.765414807021" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.765429515718" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.765429515718" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -415,7 +415,6 @@
 <pre class="language-properties"><code v-pre class="language-properties">### General
 # Video
 profile=high-quality
-vo=gpu-next
 target-colorspace-hint
 hwdec=auto-safe
 
@@ -432,6 +431,18 @@ gpu-api=vulkan # Only use Vulkan for NVIDIA GPUs. D3D11 is a better choice on AM
 # audio-channels=stereo,5.1,7.1
 
 ## HDR # Comment these out on SDR Displays
+[DoVi-P5]
+profile-cond=get(&quot;video-params/colormatrix&quot;) == &quot;dolbyvision&quot; and get(&quot;video-params/colorlevels&quot;) == &quot;full&quot;
+profile-restore=copy
+profile=HDR
+
+[SDR]
+profile-cond=p[&quot;video-params/primaries&quot;] and p[&quot;video-params/primaries&quot;] ~= &quot;bt.2020&quot;
+vo=gpu
+
+[HDR]
+profile-cond=p[&quot;video-params/primaries&quot;] == &quot;bt.2020&quot;
+vo=gpu-next
 target-contrast=inf ##inf is for OLED, for LCD get the contrast value from rtings or similar
 target-trc=pq
 target-prim=dci-p3
@@ -508,7 +519,7 @@ If you have a system that supports both, and is connected via HDMI, you should b
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Note that removing dts-hd and truehd from the config will not prevent them from being picked. DTS-HD should automatically play the compatibility track, however TrueHD will be transcoded to PCM. The trackselect.lua script can be used to exclude TrueHD, which should automatically pick the compatibility track instead.</p>
+<p>Note that removing dts-hd and truehd from the config will not prevent them from being picked. DTS-HD should automatically play the compatibility track, however TrueHD will be transcoded to PCM. The <a href="https://github.com/po5/trackselect">trackselect.lua</a> script can be used to exclude TrueHD, which should automatically pick the compatibility track instead.</p>
         </div>
     </div>
 </div>
