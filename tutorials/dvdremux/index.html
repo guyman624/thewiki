@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769286190492">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769291979372">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769286190492" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769291979372" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769286190492" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769291979372" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769286190492" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769291979372" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -180,13 +180,13 @@
 <li><a href="https://github.com/BtbN/FFmpeg-Builds/releases">ffmpeg-master-latest-win64-gpl-shared</a></li>
 <li><a href="https://github.com/clsid2/mpc-hc/releases">MPC-HC</a></li>
 </ol>
-<doc-anchor-target id="finding-chaptertitleangle-mpc-hc">
+<doc-anchor-target id="finding-titleanglechapter-mpc-hc">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#finding-chaptertitleangle-mpc-hc">#</doc-anchor-trigger>
-        <span>Finding Chapter/Title/Angle (MPC-HC)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#finding-titleanglechapter-mpc-hc">#</doc-anchor-trigger>
+        <span>Finding Title/Angle/Chapter (MPC-HC)</span>
     </h2>
 </doc-anchor-target>
-<p>DVDs can be split into Titles, Chapters and Angles. The simplest way to find all 3 for the episodes you are trying to remux is to use MPC-HC. (MPV and VLC lack these capabilities)</p>
+<p>DVDs can be split into Titles, Angles and Chapters. The simplest way to find all 3 for the episodes you are trying to remux is to use MPC-HC. (MPV and VLC lack these capabilities)</p>
 <ol>
 <li>Mount your ISO/insert your DVD.</li>
 <li>In MPC, click File &gt; Open DVD/BD and select the root directory of the DVD.</li>
@@ -224,7 +224,7 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Note that a single episode will probably have more than one chapter. Make sure to take note of them all.</p>
+<p>Note that depending on the disc, each episode may have it&#x27;s own title, or all episodes may be in one title. This will vary on a case by case basis, so you will need to check the disc yourself.</p>
         </div>
     </div>
 </div>
@@ -249,6 +249,15 @@
     </div>
 </div>
 </doc-panel>
+<doc-anchor-target id="checking-for-dvd_pcm">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#checking-for-dvd_pcm">#</doc-anchor-trigger>
+        <span>Checking for dvd_pcm</span>
+    </h2>
+</doc-anchor-target>
+<p>If your dvd has PCM Audio, it needs to be converted to another format during the remuxing process. To check for PCM, in MPC-HC during the episode check Play &gt; Audio Track.</p>
+<p>If it says PCM, you need to specify the audio track to be converted to FLAC during remux.</p>
+<p>To find what tracks are PCM, you can use ffprobe</p>
 <doc-anchor-target id="remuxing">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#remuxing">#</doc-anchor-trigger>
@@ -260,10 +269,10 @@
 <p><code v-pre>ffmpeg -f dvdvideo -preindex True -title &lt;title&gt; -chapter_start &lt;start_chap&gt; -chapter_end &lt;end_chap&gt; -angle &lt;angle&gt; -i &lt;path_to_dvd&gt; -map 0 -c copy &lt;filename&gt;.mkv</code></p>
 <p>Replace:</p>
 <ul>
-<li>&lt;title&gt; with the title number</li>
-<li>&lt;start_chap&gt; with the first chapter of the episode</li>
-<li>&lt;end_chap&gt; with the last chapter of the episode (inclusive)</li>
-<li>&lt;angle&gt; with the angle, if applicable. Otherwise, you can delete the -angle flag</li>
+<li>&lt;title&gt; with the title number (Integer 1-9)</li>
+<li>&lt;start_chap&gt; with the first chapter of the episode (Integer 1-99)</li>
+<li>&lt;end_chap&gt; with the last chapter (inclusive) of the episode (Integer 1-99)</li>
+<li>&lt;angle&gt; with the angle, if applicable. Otherwise, you can delete the -angle flag (Integer</li>
 <li>&lt;path_to_dvd&gt; with the drive letter/mount point of your DVD (For example, &quot;D:&quot;)</li>
 <li>&lt;filename&gt; with whatever you would like to call the output file</li>
 </ul>
