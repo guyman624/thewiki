@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769285823345">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769286190492">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769285823345" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769286190492" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769285823345" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769286190492" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769285823345" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769286190492" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -257,12 +257,13 @@
 </doc-anchor-target>
 <p>To remux, you need the latest FFMpeg from the link above. Other builds may not have the proper compile flags to include DVD Demuxing support.</p>
 <p>Once you have the Title, Chapter range, and optionally Angle from the above steps, simply run</p>
-<p><code v-pre>ffmpeg -f dvdvideo -preindex True -title &lt;title&gt; -chapter_start &lt;start_chap&gt; -chapter_end &lt;end_chap&gt; -i &lt;path_to_dvd&gt; -map 0 -c copy &lt;filename&gt;.mkv</code></p>
+<p><code v-pre>ffmpeg -f dvdvideo -preindex True -title &lt;title&gt; -chapter_start &lt;start_chap&gt; -chapter_end &lt;end_chap&gt; -angle &lt;angle&gt; -i &lt;path_to_dvd&gt; -map 0 -c copy &lt;filename&gt;.mkv</code></p>
 <p>Replace:</p>
 <ul>
 <li>&lt;title&gt; with the title number</li>
 <li>&lt;start_chap&gt; with the first chapter of the episode</li>
 <li>&lt;end_chap&gt; with the last chapter of the episode (inclusive)</li>
+<li>&lt;angle&gt; with the angle, if applicable. Otherwise, you can delete the -angle flag</li>
 <li>&lt;path_to_dvd&gt; with the drive letter/mount point of your DVD (For example, &quot;D:&quot;)</li>
 <li>&lt;filename&gt; with whatever you would like to call the output file</li>
 </ul>
