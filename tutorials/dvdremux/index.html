@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769281399069">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769285639958">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769281399069" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769285639958" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769281399069" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769285639958" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769281399069" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769285639958" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -186,7 +186,7 @@
         <span>Finding Chapter/Title/Angle (MPC-HC)</span>
     </h2>
 </doc-anchor-target>
-<p>DVDs can be split into Titles, Chapters and Angles. The simplest way to find all 3 for the episodes you are trying to demux is to use MPC-HC. (MPV and VLC lack these capabilities)</p>
+<p>DVDs can be split into Titles, Chapters and Angles. The simplest way to find all 3 for the episodes you are trying to remux is to use MPC-HC. (MPV and VLC lack these capabilities)</p>
 <ol>
 <li>Mount your ISO/insert your DVD.</li>
 <li>In MPC, click File &gt; Open DVD/BD and select the root directory of the DVD.</li>
@@ -209,7 +209,7 @@
     </div>
 </div>
 <ol start="4">
-<li>Once playing the episode you are looking to demux, open Navigate &gt; Titles and Navigate &gt; Chapters</li>
+<li>Once playing the episode you are looking to remux, open Navigate &gt; Titles and Navigate &gt; Chapters</li>
 <li>Look the selected title and chapter, and note them down.</li>
 </ol>
 <div class="flex mb-6">
@@ -230,7 +230,7 @@
 </div>
 <doc-panel id="angles" collapsed>
     <template #title>Angles</template>
-<p>Some DVDs will also have an Angle selection under Play &gt; Video Angle. If your DVD has multiple, make sure to note down the one you want to demux.</p>
+<p>Some DVDs will also have an Angle selection under Play &gt; Video Angle. If your DVD has multiple, make sure to note down the one you want to remux.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -249,12 +249,24 @@
     </div>
 </div>
 </doc-panel>
-<doc-anchor-target id="demuxing">
+<doc-anchor-target id="remuxing">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#demuxing">#</doc-anchor-trigger>
-        <span>Demuxing</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#remuxing">#</doc-anchor-trigger>
+        <span>Remuxing</span>
     </h2>
 </doc-anchor-target>
+<p>To remux, you need the latest FFMpeg from the link above. Other builds may not have the proper compile flags to include DVD Demuxing support.
+Once you have the Title, Chapter range, and optionally Angle from the above steps, simply run
+<code v-pre>ffmpeg -f dvdvideo -preindex True -title &lt;title&gt; -chapter_start &lt;start_chap&gt; -chapter_end &lt;end_chap&gt; -i &lt;path_to_dvd&gt; -map 0 -c copy &lt;filename&gt;.mkv</code></p>
+<p>Replace:</p>
+<ul>
+<li><title> with the title number
+</li>
+<li>&lt;start_chap&gt; with the first chapter of the episode</li>
+<li>&lt;end_chap&gt; with the last chapter of the episode (inclusive)</li>
+<li>&lt;path_to_dvd&gt; with the drive letter/mount point of your DVD (For example, &quot;D:&quot;)</li>
+<li><filename> with whatever you would like to call the output file</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
