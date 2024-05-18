@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769369939227">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769371755212">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769369939227" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769371755212" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769369939227" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769371755212" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769369939227" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769371755212" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -155,18 +155,6 @@
         <span>DVD Remuxing</span>
     </h1>
 </doc-anchor-target>
-<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
-    <div class="flex items-center">
-        <div>By</div>
-        <div class="ml-2 flex items-center">
-          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
-            <img class="object-cover" src="https://github.com/Snaacky/thewiki/assets/78981416/2045b3c7-90a5-40ce-9d81-a81baa421227">
-          </div>
-          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">guyman</div>
-        </div>
-    </div>
-</div>
-
 <p>This guide can be used to remux DVDs using FFMpeg and MPC-HC</p>
 <doc-anchor-target id="required">
     <h2>
@@ -220,12 +208,13 @@
     </h2>
 </doc-anchor-target>
 <p>If your DVD has PCM Audio, it needs to be converted to another format during the remuxing process.</p>
-<p>To check for PCM, navigate to your mounted DVD, and open the VIDEO_TS Folder. Try to find the VOB that associates with the episode/episodes you are trying to remux. This can usually be done easily by looking for the largest VOBs. Once you have picked a VOB, you can right click and view the MediaInfo.</p>
-<p>To ensure you can see all audio tracks, switch to Text mode</p>
-<doc-panel id="example-mediainfo" collapsed>
-    <template #title>Example MediaInfo</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">General
+<!--
+To check for PCM, navigate to your mounted DVD, and open the VIDEO_TS Folder. Try to find the VOB that associates with the episode/episodes you are trying to remux. This can usually be done easily by looking for the largest VOBs. Once you have picked a VOB, you can right click and view the MediaInfo.
+
+To ensure you can see all audio tracks, switch to Text mode
+==- Example MediaInfo
+```
+General
 Complete name                            : D:\VIDEO_TS\VTS_01_1.VOB
 CompleteName_Last                        : D:\VIDEO_TS\VTS_01_7.VOB
 Format                                   : MPEG-PS
@@ -279,10 +268,30 @@ Bit depth                                : 16 bits
 Stream size                              : 1.27 MiB (0%)
 
 Menu
-Format                                   : DVD-Video</code></pre>
+Format                                   : DVD-Video
+```
+==-
+
+!-->
+<p>We can use ffprobe to check for PCM streams, and to check their stream ids. To do this, run the command:</p>
+<p><code v-pre>ffprobe -f dvdvideo -title &lt;title&gt; -i &lt;path_to_dvd&gt;</code></p>
+<p>Replace:</p>
+<ul>
+<li>&lt;title&gt; with the title number you got from MPC-HC. This will be an integer from 1-9.</li>
+<li>&lt;path_to_dvd&gt; with the path to the disc image, or the VIDEO_TS folder of a mounted disc</li>
+</ul>
+<doc-panel id="example-ffprobe-output-snippet" collapsed>
+    <template #title>Example ffprobe output snippet</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Input #0, dvdvideo, from 'D:\VIDEO_TS':
+  Duration: 00:00:35.50, start: 0.000000, bitrate: N/A
+  Stream #0:0[0x1e0]: Video: mpeg2video, yuv420p(tv, top first), 720x480, SAR 8:9 DAR 4:3, 29.97 fps, 29.97 tbr, 90k tbn
+      Side data:
+        cpb: bitrate max/min/avg: 9800000/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1[0xa0](jpn): Audio: pcm_dvd, 48000 Hz, stereo, s16, 1536 kb/s</code></pre>
 </doc-codeblock></div>
 </doc-panel>
-<p>In the example case, there is one audio stream and it is PCM. This stream will need to be converted to another lossless format, and has the stream id of 0. If there were more audio streams, count up from 0.</p>
+<p>In the example case, there is one audio stream and it is PCM. This stream will need to be converted to another lossless format. Since it is <code v-pre>Stream #0:1</code>, the stream id is 1.</p>
 <doc-anchor-target id="remuxing">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#remuxing">#</doc-anchor-trigger>
@@ -308,8 +317,8 @@ Format                                   : DVD-Video</code></pre>
 <doc-panel id="dvds-with-pcm-audio" collapsed>
     <template #title>DVDs with PCM Audio</template>
 <p>If your disc has PCM Audio, add:</p>
-<p><code v-pre>-codec:a:&lt;stream_id&gt; flac</code></p>
-<p>Replace &lt;stream_id&gt; with the stream id you got using MediaInfo. If you have multiple PCM streams, add another one for each stream. This will convert the PCM audio to FLAC.</p>
+<p><code v-pre>-codec:&lt;stream_id&gt; flac</code></p>
+<p>Replace &lt;stream_id&gt; with the stream id you got using ffprobe. If you have multiple PCM streams, add another one for each stream. This will convert the PCM audio to FLAC.</p>
 </doc-panel>
 <doc-anchor-target id="final-piece">
     <h4>
@@ -321,7 +330,7 @@ Format                                   : DVD-Video</code></pre>
 <p><code v-pre>-i &lt;path_to_dvd&gt; -map 0 -c copy &lt;filename&gt;.mkv</code></p>
 <p>Replace:</p>
 <ul>
-<li>&lt;path_to_dvd&gt; with the mount point or drive letter of your disc.</li>
+<li>&lt;path_to_dvd&gt; with the path to the disc image or the mount pount.</li>
 <li>&lt;filename&gt; with what you would like the resulting file to be called.</li>
 </ul>
 <p>Here is an example of a working command:</p>
