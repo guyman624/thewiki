@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769371755212">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769373538595">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769371755212" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769373538595" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769371755212" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769373538595" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769371755212" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769373538595" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -163,7 +163,11 @@
     </h2>
 </doc-anchor-target>
 <ol>
-<li><a href="https://github.com/BtbN/FFmpeg-Builds/releases">ffmpeg-master-latest-win64-gpl-shared</a></li>
+<li>FFMpeg &gt;=7.0 GPL build from <a href="https://github.com/BtbN/FFmpeg-Builds/releases">BtbN</a>
+<ul>
+<li><a href="https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.0-latest-win64-lgpl-7.0.zip">Quick link for Windows x64</a></li>
+</ul>
+</li>
 <li><a href="https://github.com/clsid2/mpc-hc/releases">MPC-HC</a></li>
 <li><a href="https://mediaarea.net/en/MediaInfo/Download">MediaInfo</a></li>
 </ol>
@@ -277,7 +281,7 @@ Format                                   : DVD-Video
 <p><code v-pre>ffprobe -f dvdvideo -title &lt;title&gt; -i &lt;path_to_dvd&gt;</code></p>
 <p>Replace:</p>
 <ul>
-<li>&lt;title&gt; with the title number you got from MPC-HC. This will be an integer from 1-9.</li>
+<li>&lt;title&gt; with the title number you got from MPC-HC. This will be an integer from 1-99.</li>
 <li>&lt;path_to_dvd&gt; with the path to the disc image, or the VIDEO_TS folder of a mounted disc</li>
 </ul>
 <doc-panel id="example-ffprobe-output-snippet" collapsed>
@@ -301,7 +305,7 @@ Format                                   : DVD-Video
 <p>To remux, you need the latest FFMpeg from the link above. Other builds may not have the proper compile flags to include DVD Demuxing support.</p>
 <p>We need to build a ffmpeg command for you to use. You can start with a base of:</p>
 <p><code v-pre>ffmpeg -f dvdvideo -preindex True -title &lt;title&gt;</code></p>
-<p>Replace &lt;title&gt; with the title you are looking to remux. This will be an integer from 1-9. If none of the following apply to your disc, skip to the end.</p>
+<p>Replace &lt;title&gt; with the title you are looking to remux. This will be an integer from 1-99. If none of the following apply to your disc, skip to the end.</p>
 <doc-panel id="dvds-with-multiple-episodes-per-title" collapsed>
     <template #title>DVDs with multiple episodes per Title</template>
 <p>If you have multiple episodes per title, you need to add:</p>
@@ -312,7 +316,7 @@ Format                                   : DVD-Video
     <template #title>DVDs with multiple angles</template>
 <p>If you want to rip a non-default angle from the disc, add:</p>
 <p><code v-pre>-angle &lt;angle&gt;</code></p>
-<p>Replace &lt;angle&gt; with the angle number you are looking to remux.</p>
+<p>Replace &lt;angle&gt; with the angle number you are looking to remux. This will be an integer from 1-9.</p>
 </doc-panel>
 <doc-panel id="dvds-with-pcm-audio" collapsed>
     <template #title>DVDs with PCM Audio</template>
@@ -331,7 +335,7 @@ Format                                   : DVD-Video
 <p>Replace:</p>
 <ul>
 <li>&lt;path_to_dvd&gt; with the path to the disc image or the mount pount.</li>
-<li>&lt;filename&gt; with what you would like the resulting file to be called.</li>
+<li>&lt;filename&gt; with what you would like the resulting file to be named.</li>
 </ul>
 <p>Here is an example of a working command:</p>
 <p><code v-pre>ffmpeg -f video -preindex True -title 2 -chapter_start 1 -chapter_end 8 -angle 1 -codec:a:0 flac -i D:\ -map 0 -c copy test.mkv</code></p>
