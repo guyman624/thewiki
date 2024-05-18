@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769326104334">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769326341569">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769326104334" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769326341569" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769326104334" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769326341569" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769326104334" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769326341569" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -211,17 +211,17 @@
 </div>
 <p>Once you are in the DVD Menu, you should be able to navigate to all the episodes. You will need to take note of a few things about the particular disc you are remuxing.</p>
 <ul>
-<li>Find out if the episodes are all in 1 Title, or if each episode has its own Title. You can view the current title by going to Navigate &gt; Titles</li>
+<li>Find out if the episodes are all in 1 title, or if each episode has its own title. You can view the current title by going to Navigate &gt; Titles</li>
 <li>Find out if the disc has multiple angles. Different angles are used for many things from switching between different editions of the video (Broadcast, Home, Director&#x27;s Cut, Theatrical), to switching between English and Japanese Credits/Typesetting</li>
-<li>If each episode does not have its own Title, find out where the Chapter marks are for each episode.</li>
+<li>If each episode does not have its own title, find out where the Chapter marks are for each episode.</li>
 </ul>
-<doc-anchor-target id="checking-for-dvd_pcm">
+<doc-anchor-target id="checking-for-pcm">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#checking-for-dvd_pcm">#</doc-anchor-trigger>
-        <span>Checking for dvd_pcm</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#checking-for-pcm">#</doc-anchor-trigger>
+        <span>Checking for PCM</span>
     </h2>
 </doc-anchor-target>
-<p>If your dvd has PCM Audio, it needs to be converted to another format during the remuxing process.</p>
+<p>If your DVD has PCM Audio, it needs to be converted to another format during the remuxing process.</p>
 <p>To check for PCM, navigate to your mounted DVD, and open the VIDEO_TS Folder. Try to find the VOB that associates with the episode/episodes you are trying to remux. This can usually be done easily by looking for the largest VOBs. Once you have picked a VOB, you can right click and view the MediaInfo.</p>
 <p>To ensure you can see all audio tracks, switch to Text mode</p>
 <doc-panel id="example-mediainfo" collapsed>
@@ -323,7 +323,7 @@ Format                                   : DVD-Video</code></pre>
 <p><code v-pre>-i &lt;path_to_dvd&gt; -map 0 -c copy &lt;filename&gt;.mkv</code></p>
 <p>Replace &lt;path_to_dvd&gt; with the mount point or drive letter of your disc. Replace &lt;filename&gt; with what you would like the resulting file to be called.</p>
 <p>Here is an example of a working command:</p>
-<p><code v-pre>ffmpeg -f dvdvideo -preindex True -title 2 -chapter_start 1 -chapter_end 8 -angle 1 -codec:a:0 flac -i D:\ -map 0 -c copy test.mkv</code></p>
+<p><code v-pre>ffmpeg -f video -preindex True -title 2 -chapter_start 1 -chapter_end 8 -angle 1 -codec:a:0 flac -i D:\ -map 0 -c copy test.mkv</code></p>
 
                                 
                                 <!-- Required only on API pages -->
