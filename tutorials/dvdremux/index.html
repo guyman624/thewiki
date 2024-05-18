@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769291979372">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769326104334">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769291979372" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769326104334" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769291979372" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769326104334" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769291979372" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769326104334" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -179,6 +179,7 @@
 <ol>
 <li><a href="https://github.com/BtbN/FFmpeg-Builds/releases">ffmpeg-master-latest-win64-gpl-shared</a></li>
 <li><a href="https://github.com/clsid2/mpc-hc/releases">MPC-HC</a></li>
+<li><a href="https://mediaarea.net/en/MediaInfo/Download">MediaInfo</a></li>
 </ol>
 <doc-anchor-target id="finding-titleanglechapter-mpc-hc">
     <h2>
@@ -208,56 +209,82 @@
         </div>
     </div>
 </div>
-<ol start="4">
-<li>Once playing the episode you are looking to remux, open Navigate &gt; Titles and Navigate &gt; Chapters</li>
-<li>Look the selected title and chapter, and note them down.</li>
-</ol>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>Note that depending on the disc, each episode may have it&#x27;s own title, or all episodes may be in one title. This will vary on a case by case basis, so you will need to check the disc yourself.</p>
-        </div>
-    </div>
-</div>
-<doc-panel id="angles" collapsed>
-    <template #title>Angles</template>
-<p>Some DVDs will also have an Angle selection under Play &gt; Video Angle. If your DVD has multiple, make sure to note down the one you want to remux.</p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>In the case of FMA 2003 R1 DVD, Angles are used for typesetting purposes.</p>
-        </div>
-    </div>
-</div>
-</doc-panel>
+<p>Once you are in the DVD Menu, you should be able to navigate to all the episodes. You will need to take note of a few things about the particular disc you are remuxing.</p>
+<ul>
+<li>Find out if the episodes are all in 1 Title, or if each episode has its own Title. You can view the current title by going to Navigate &gt; Titles</li>
+<li>Find out if the disc has multiple angles. Different angles are used for many things from switching between different editions of the video (Broadcast, Home, Director&#x27;s Cut, Theatrical), to switching between English and Japanese Credits/Typesetting</li>
+<li>If each episode does not have its own Title, find out where the Chapter marks are for each episode.</li>
+</ul>
 <doc-anchor-target id="checking-for-dvd_pcm">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#checking-for-dvd_pcm">#</doc-anchor-trigger>
         <span>Checking for dvd_pcm</span>
     </h2>
 </doc-anchor-target>
-<p>If your dvd has PCM Audio, it needs to be converted to another format during the remuxing process. To check for PCM, in MPC-HC during the episode check Play &gt; Audio Track.</p>
-<p>If it says PCM, you need to specify the audio track to be converted to FLAC during remux.</p>
-<p>To find what tracks are PCM, you can use ffprobe</p>
+<p>If your dvd has PCM Audio, it needs to be converted to another format during the remuxing process.</p>
+<p>To check for PCM, navigate to your mounted DVD, and open the VIDEO_TS Folder. Try to find the VOB that associates with the episode/episodes you are trying to remux. This can usually be done easily by looking for the largest VOBs. Once you have picked a VOB, you can right click and view the MediaInfo.</p>
+<p>To ensure you can see all audio tracks, switch to Text mode</p>
+<doc-panel id="example-mediainfo" collapsed>
+    <template #title>Example MediaInfo</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">General
+Complete name                            : D:\VIDEO_TS\VTS_01_1.VOB
+CompleteName_Last                        : D:\VIDEO_TS\VTS_01_7.VOB
+Format                                   : MPEG-PS
+File size                                : 6.63 GiB
+Duration                                 : 6 s 962 ms
+Overall bit rate mode                    : Variable
+Overall bit rate                         : 8 176 Mb/s
+Frame rate                               : 29.970 FPS
+
+Video
+ID                                       : 224 (0xE0)
+Format                                   : MPEG Video
+Format version                           : Version 2
+Format profile                           : Main@Main
+Format settings                          : CustomMatrix / BVOP
+Format settings, BVOP                    : Yes
+Format settings, Matrix                  : Custom
+Format settings, GOP                     : Variable
+Format settings, picture structure       : Frame
+Duration                                 : 6 s 962 ms
+Bit rate mode                            : Variable
+Bit rate                                 : 8 012 Mb/s
+Maximum bit rate                         : 9 800 kb/s
+Width                                    : 720 pixels
+Height                                   : 480 pixels
+Display aspect ratio                     : 16:9
+Frame rate                               : 29.970 (30000/1001) FPS
+Standard                                 : NTSC
+Color space                              : YUV
+Chroma subsampling                       : 4:2:0
+Bit depth                                : 8 bits
+Scan type                                : Interlaced
+Scan order                               : Top Field First
+Compression mode                         : Lossy
+Bits/(Pixel*Frame)                       : 773.495
+Time code of first frame                 : 01:00:00:00
+Time code source                         : Group of pictures header
+Stream size                              : 6.50 GiB (98%)
+
+Audio
+ID                                       : 189 (0xBD)-160 (0xA0)
+Format                                   : PCM
+Format settings                          : Big / Signed
+Muxing mode                              : DVD-Video
+Duration                                 : 6 s 927 ms
+Bit rate mode                            : Constant
+Bit rate                                 : 1 536 kb/s
+Channel(s)                               : 2 channels
+Sampling rate                            : 48.0 kHz
+Bit depth                                : 16 bits
+Stream size                              : 1.27 MiB (0%)
+
+Menu
+Format                                   : DVD-Video</code></pre>
+</doc-codeblock></div>
+</doc-panel>
+<p>In the example case, there is one audio stream and it is PCM. This stream will need to be converted to another lossless format, and has the stream id of 0. If there were more audio streams, count up from 0.</p>
 <doc-anchor-target id="remuxing">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#remuxing">#</doc-anchor-trigger>
@@ -265,17 +292,38 @@
     </h2>
 </doc-anchor-target>
 <p>To remux, you need the latest FFMpeg from the link above. Other builds may not have the proper compile flags to include DVD Demuxing support.</p>
-<p>Once you have the Title, Chapter range, and optionally Angle from the above steps, simply run</p>
-<p><code v-pre>ffmpeg -f dvdvideo -preindex True -title &lt;title&gt; -chapter_start &lt;start_chap&gt; -chapter_end &lt;end_chap&gt; -angle &lt;angle&gt; -i &lt;path_to_dvd&gt; -map 0 -c copy &lt;filename&gt;.mkv</code></p>
-<p>Replace:</p>
-<ul>
-<li>&lt;title&gt; with the title number (Integer 1-9)</li>
-<li>&lt;start_chap&gt; with the first chapter of the episode (Integer 1-99)</li>
-<li>&lt;end_chap&gt; with the last chapter (inclusive) of the episode (Integer 1-99)</li>
-<li>&lt;angle&gt; with the angle, if applicable. Otherwise, you can delete the -angle flag (Integer</li>
-<li>&lt;path_to_dvd&gt; with the drive letter/mount point of your DVD (For example, &quot;D:&quot;)</li>
-<li>&lt;filename&gt; with whatever you would like to call the output file</li>
-</ul>
+<p>We need to build a ffmpeg command for you to use. You can start with a base of:</p>
+<p><code v-pre>ffmpeg -f dvdvideo -preindex True -title &lt;title&gt;</code></p>
+<p>Replace &lt;title&gt; with the title you are looking to remux. This will be an integer from 1-9. If your particular disc has 1 episode per title, skip to the end.</p>
+<doc-panel id="dvds-with-multiple-episodes-per-title" collapsed>
+    <template #title>DVDs with multiple episodes per Title</template>
+<p>If you have multiple episodes per title, you need to add:</p>
+<p><code v-pre>-chapter_start &lt;start_chap&gt; -chapter_end &lt;end_chap&gt;</code></p>
+<p>Replace &lt;start_chap&gt; with the first chapter of the episode you are remuxing. Replace &lt;end_chap&gt; with the last chapter of the episode, inclusive. Both accept an integer from 1-99</p>
+</doc-panel>
+<doc-panel id="dvds-with-multiple-angles" collapsed>
+    <template #title>DVDs with multiple angles</template>
+<p>If you want to rip a non-default angle from the disc, add:</p>
+<p><code v-pre>-angle &lt;angle&gt;</code></p>
+<p>Replace &lt;angle&gt; with the angle number you are looking to remux.</p>
+</doc-panel>
+<doc-panel id="dvds-with-pcm-audio" collapsed>
+    <template #title>DVDs with PCM Audio</template>
+<p>If your disc has PCM Audio, add:</p>
+<p><code v-pre>-codec:a:&lt;stream_id&gt; flac</code></p>
+<p>Replace &lt;stream_id&gt; with the stream id you got using MediaInfo. If you have multiple PCM streams, add another one for each stream. This will convert the PCM audio to FLAC.</p>
+</doc-panel>
+<doc-anchor-target id="final-piece">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#final-piece">#</doc-anchor-trigger>
+        <span>Final Piece</span>
+    </h1>
+</doc-anchor-target>
+<p>After you have added the rest of the required flags, you can end the command with:</p>
+<p><code v-pre>-i &lt;path_to_dvd&gt; -map 0 -c copy &lt;filename&gt;.mkv</code></p>
+<p>Replace &lt;path_to_dvd&gt; with the mount point or drive letter of your disc. Replace &lt;filename&gt; with what you would like the resulting file to be called.</p>
+<p>Here is an example of a working command:</p>
+<p><code v-pre>ffmpeg -f dvdvideo -preindex True -title 2 -chapter_start 1 -chapter_end 8 -angle 1 -codec:a:0 flac -i D:\ -map 0 -c copy test.mkv</code></p>
 
                                 
                                 <!-- Required only on API pages -->
