@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769533533442">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769560603584">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>DVD Remuxing</title>
     <meta name="title" content="DVD Remuxing">
-    <meta name="description" content="Remux DVDs using FFMpeg">
+    <meta name="description" content="Remux DVDs using FFmpeg">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://thewiki.moe/tutorials/dvdremux/">
@@ -20,21 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thewiki.moe/tutorials/dvdremux/">
     <meta property="og:title" content="DVD Remuxing">
-    <meta property="og:description" content="Remux DVDs using FFMpeg">
+    <meta property="og:description" content="Remux DVDs using FFmpeg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://thewiki.moe/tutorials/dvdremux/">
     <meta property="twitter:title" content="DVD Remuxing">
-    <meta property="twitter:description" content="Remux DVDs using FFMpeg">
+    <meta property="twitter:description" content="Remux DVDs using FFmpeg">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769533533442" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769560603584" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769533533442" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769560603584" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769533533442" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769560603584" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -155,7 +155,7 @@
         <span>DVD Remuxing</span>
     </h1>
 </doc-anchor-target>
-<p>This guide can be used to remux DVDs using FFMpeg and MPC-HC</p>
+<p>This guide can be used to remux DVDs using FFmpeg and MPC-HC</p>
 <doc-anchor-target id="required">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#required">#</doc-anchor-trigger>
@@ -163,7 +163,7 @@
     </h2>
 </doc-anchor-target>
 <ol>
-<li>FFMpeg &gt;=7.0 GPL build from <a href="https://github.com/BtbN/FFmpeg-Builds/releases">BtbN</a>
+<li>FFmpeg &gt;=7.0 GPL build from <a href="https://github.com/BtbN/FFmpeg-Builds/releases">BtbN</a>
 <ul>
 <li><a href="https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.0-latest-win64-gpl-7.0.zip">Quick link for Windows x64</a></li>
 </ul>
@@ -301,7 +301,7 @@ Format                                   : DVD-Video
         <span>Remuxing</span>
     </h2>
 </doc-anchor-target>
-<p>To remux, you need the latest FFMpeg from the link above. Other builds may not have the proper compile flags to include DVD Demuxing support.</p>
+<p>To remux, you need the latest FFmpeg from the link above. Other builds may not have the proper compile flags to include DVD Demuxing support.</p>
 <p>We need to build a ffmpeg command for you to use. You can start with a base of:</p>
 <p><code v-pre>ffmpeg -f dvdvideo -preindex True -title &lt;title&gt;</code></p>
 <p>Replace &lt;title&gt; with the title you are looking to remux. This will be an integer from 1-99*. If none of the following apply to your disc, skip to the end.</p>
