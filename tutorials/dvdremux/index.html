@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769561245886">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769564044928">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769561245886" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769564044928" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769561245886" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769564044928" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769561245886" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769564044928" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -323,6 +323,7 @@ Format                                   : DVD-Video
     <template #title>DVDs with PCM Audio</template>
 <p>If your disc has PCM Audio, add:</p>
 <p><code v-pre>-codec:&lt;stream_id&gt; flac</code></p>
+<p><strong>After</strong> <code v-pre>-c copy</code> in the final part of the command.</p>
 <p>Replace &lt;stream_id&gt; with the stream id you got using ffprobe. If you have multiple PCM streams, add another one for each stream. This will convert the PCM audio to FLAC.</p>
 </doc-panel>
 <doc-anchor-target id="final-piece">
@@ -339,7 +340,7 @@ Format                                   : DVD-Video
 <li>&lt;filename&gt; with what you would like the resulting file to be named.</li>
 </ul>
 <p>Here is an example of a working command:</p>
-<p><code v-pre>ffmpeg -f dvdvideo -preindex True -title 2 -chapter_start 1 -chapter_end 8 -angle 1 -codec:a:0 flac -i example.iso -map 0 -c copy test.mkv</code></p>
+<p><code v-pre>ffmpeg -f dvdvideo -preindex True -title 2 -angle 2 -chapter_start 4 -chapter_end 8 -i example.iso -map 0 -c copy -codec:1 flac test.mkv</code></p>
 
                                 
                                 <!-- Required only on API pages -->
