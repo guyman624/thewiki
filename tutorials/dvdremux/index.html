@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769564044928">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769564220502">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769564044928" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769564220502" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769564044928" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769564220502" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769564044928" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769564220502" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -304,7 +304,7 @@ Format                                   : DVD-Video
 <p>To remux, you need the latest FFmpeg from the link above. Other builds may not have the proper compile flags to include DVD Demuxing support.</p>
 <p>We need to build a ffmpeg command for you to use. You can start with a base of:</p>
 <p><code v-pre>ffmpeg -f dvdvideo -preindex True -title &lt;title&gt;</code></p>
-<p>Replace &lt;title&gt; with the title you are looking to remux. This will be an integer from 1-99*. If none of the following apply to your disc, skip to the end.</p>
+<p>Replace &lt;title&gt; with the title you are looking to remux. This will be an integer from 1-99*. If neither of the following apply to your disc, skip to the end.</p>
 <p><em>*Although 0 is a valid title number, ffmpeg treats it the same as title 1.</em></p>
 <doc-panel id="dvds-with-multiple-angles" collapsed>
     <template #title>DVDs with multiple angles</template>
@@ -319,13 +319,6 @@ Format                                   : DVD-Video
 <p>Replace &lt;start_chap&gt; with the first chapter of the episode you are remuxing. Replace &lt;end_chap&gt; with the last chapter of the episode, inclusive. Both accept an integer from 1-99</p>
 <p>If you are including the first or last chapter, you can exclude the respective argument.</p>
 </doc-panel>
-<doc-panel id="dvds-with-pcm-audio" collapsed>
-    <template #title>DVDs with PCM Audio</template>
-<p>If your disc has PCM Audio, add:</p>
-<p><code v-pre>-codec:&lt;stream_id&gt; flac</code></p>
-<p><strong>After</strong> <code v-pre>-c copy</code> in the final part of the command.</p>
-<p>Replace &lt;stream_id&gt; with the stream id you got using ffprobe. If you have multiple PCM streams, add another one for each stream. This will convert the PCM audio to FLAC.</p>
-</doc-panel>
 <doc-anchor-target id="final-piece">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#final-piece">#</doc-anchor-trigger>
@@ -334,6 +327,13 @@ Format                                   : DVD-Video
 </doc-anchor-target>
 <p>After you have added the rest of the required flags, you can end the command with:</p>
 <p><code v-pre>-i &lt;path_to_dvd&gt; -map 0 -c copy &lt;filename&gt;.mkv</code></p>
+<doc-panel id="dvds-with-pcm-audio" collapsed>
+    <template #title>DVDs with PCM Audio</template>
+<p>If your disc has PCM Audio, add:</p>
+<p><code v-pre>-codec:&lt;stream_id&gt; flac</code></p>
+<p><strong>After</strong> <code v-pre>-c copy</code> in the final part of the command.</p>
+<p>Replace &lt;stream_id&gt; with the stream id you got using ffprobe. If you have multiple PCM streams, add another one for each stream. This will convert the PCM audio to FLAC.</p>
+</doc-panel>
 <p>Replace:</p>
 <ul>
 <li>&lt;path_to_dvd&gt; with the path to the disc image or the mount pount.</li>
