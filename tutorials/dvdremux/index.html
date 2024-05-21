@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769578419531">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769578935898">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769578419531" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769578935898" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769578419531" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769578935898" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769578419531" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769578935898" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -210,73 +210,8 @@
         <span>Checking for PCM</span>
     </h2>
 </doc-anchor-target>
-<p>If your DVD has PCM Audio, it needs to be converted to another format during the remuxing process.</p>
-<!--
-To check for PCM, navigate to your mounted DVD, and open the VIDEO_TS Folder. Try to find the VOB that associates with the episode/episodes you are trying to remux. This can usually be done easily by looking for the largest VOBs. Once you have picked a VOB, you can right click and view the MediaInfo.
-
-To ensure you can see all audio tracks, switch to Text mode
-==- Example MediaInfo
-```
-General
-Complete name                            : D:\VIDEO_TS\VTS_01_1.VOB
-CompleteName_Last                        : D:\VIDEO_TS\VTS_01_7.VOB
-Format                                   : MPEG-PS
-File size                                : 6.63 GiB
-Duration                                 : 6 s 962 ms
-Overall bit rate mode                    : Variable
-Overall bit rate                         : 8 176 Mb/s
-Frame rate                               : 29.970 FPS
-
-Video
-ID                                       : 224 (0xE0)
-Format                                   : MPEG Video
-Format version                           : Version 2
-Format profile                           : Main@Main
-Format settings                          : CustomMatrix / BVOP
-Format settings, BVOP                    : Yes
-Format settings, Matrix                  : Custom
-Format settings, GOP                     : Variable
-Format settings, picture structure       : Frame
-Duration                                 : 6 s 962 ms
-Bit rate mode                            : Variable
-Bit rate                                 : 8 012 Mb/s
-Maximum bit rate                         : 9 800 kb/s
-Width                                    : 720 pixels
-Height                                   : 480 pixels
-Display aspect ratio                     : 16:9
-Frame rate                               : 29.970 (30000/1001) FPS
-Standard                                 : NTSC
-Color space                              : YUV
-Chroma subsampling                       : 4:2:0
-Bit depth                                : 8 bits
-Scan type                                : Interlaced
-Scan order                               : Top Field First
-Compression mode                         : Lossy
-Bits/(Pixel*Frame)                       : 773.495
-Time code of first frame                 : 01:00:00:00
-Time code source                         : Group of pictures header
-Stream size                              : 6.50 GiB (98%)
-
-Audio
-ID                                       : 189 (0xBD)-160 (0xA0)
-Format                                   : PCM
-Format settings                          : Big / Signed
-Muxing mode                              : DVD-Video
-Duration                                 : 6 s 927 ms
-Bit rate mode                            : Constant
-Bit rate                                 : 1 536 kb/s
-Channel(s)                               : 2 channels
-Sampling rate                            : 48.0 kHz
-Bit depth                                : 16 bits
-Stream size                              : 1.27 MiB (0%)
-
-Menu
-Format                                   : DVD-Video
-```
-==-
-
-!-->
-<p>We can use ffprobe to check for PCM streams, and to check their stream ids. To do this, run the command:</p>
+<p>If your DVD has PCM Audio, it needs to be converted to another format during the remuxing process.
+We can use ffprobe to check for PCM streams, and to check their stream ids. To do this, run the command:</p>
 <p><code v-pre>ffprobe -f dvdvideo -title &lt;title&gt; -i &lt;path_to_dvd&gt;</code></p>
 <p>Replace:</p>
 <ul>
