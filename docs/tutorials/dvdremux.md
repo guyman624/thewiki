@@ -9,9 +9,12 @@ This guide can be used to remux DVDs using FFmpeg and MPC-HC
 
 ## Required
 
-1. FFmpeg >=7.0 GPL build from [BtbN](https://github.com/BtbN/FFmpeg-Builds/releases)
+1. [MPC-HC](https://github.com/clsid2/mpc-hc/releases)
+2. FFmpeg >=7.0 GPL build from [BtbN](https://github.com/BtbN/FFmpeg-Builds/releases)
    - [Quick link for Windows x64](https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.0-latest-win64-gpl-7.0.zip)
-3. [MPC-HC](https://github.com/clsid2/mpc-hc/releases)
+3. [Vapoursynth](https://github.com/vapoursynth/vapoursynth/releases)
+   - [Setup guide](https://jaded-encoding-thaumaturgy.github.io/JET-guide/setup/)
+4. [MKVToolNix](https://mkvtoolnix.download/downloads.html)
 
 
 ## Finding Title/Angle/Chapter (MPC-HC)
@@ -115,3 +118,41 @@ Replace:
 Here is an example of a working command:
 
 `ffmpeg -f dvdvideo -preindex True -title 2 -angle 2 -chapter_start 4 -chapter_end 8 -i example.iso -map 0 -c copy -codec:1 flac test.mkv`
+
+
+## Correcting SAR/PAR
+
+!!!
+This step, while complicated, is absolutely necessary for your DVD remux to playback correctly. A remux that does not follow this process (or, follows it incorrectly) is **broken**.
+!!!
+
+!!!
+This process will require loading the remux into Vapoursynth, see the setup guide for details.
+!!!
+
+#### Explanation
+DVDs store whats known as anamorphic video, this means that the video encoded on the disc has a different aspect ratio than how it is meant to be displayed.
+NTSC discs store a 720x480 resolution while PAL discs are 720x576, these are neither 4:3 nor 16:9.
+A [SAR (Sample aspect ratio) aka PAR (Pixel aspect ratio)](https://en.wikipedia.org/wiki/Pixel_aspect_ratio) is applied to the image to stretch it to the intended aspect ratio.
+DVDs were meant primarily for CRT displays, which have [overscan](https://en.wikipedia.org/wiki/Overscan). Overscan was accounted for in the discs by having the [active area](https://en.wikipedia.org/wiki/Overscan#Overscan_amounts) be below 720 pixels, so when the CRT stretches the image a second time nothing important is cropped and the extra stretch results in the true aspect ratio.
+Modern displays do not have overscan, nor do they stretch the image, this means that without correction every DVD will be displayed wrong, and we need to fix this for a remux.
+
+
+#### Heuristics to identify SAR/PAR
+Figuring out the correct SAR/PAR to use to correct for this issue is not an exact science. Over the years there have been many different standards formed for anamorphic video and figuring out which your DVD uses is not an intuitive process. The methods below will be most helpful for this process.
+
+==- 1. Faded column check
+We can the size of black/faded out columns on the image's border, as this can indicate the active area.
+==-
+
+==- 2. Circle check
+We can find an object meant to be a circle and checking which standard results in a perfect circle.
+==-
+
+==- 3. Text/logo check
+We can check text or studio logos against a ground truth (Many studio logos can be found in square pixel form)
+==-
+
+==- 4. Ground truth check
+We can compare the DVD to a natively square pixel source (**Upscales do not qualify**)
+==-
