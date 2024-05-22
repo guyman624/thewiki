@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769578935898">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769722746435">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769578935898" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769722746435" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769578935898" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769722746435" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769578935898" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769722746435" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -163,12 +163,18 @@
     </h2>
 </doc-anchor-target>
 <ol>
+<li><a href="https://github.com/clsid2/mpc-hc/releases">MPC-HC</a></li>
 <li>FFmpeg &gt;=7.0 GPL build from <a href="https://github.com/BtbN/FFmpeg-Builds/releases">BtbN</a>
 <ul>
 <li><a href="https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.0-latest-win64-gpl-7.0.zip">Quick link for Windows x64</a></li>
 </ul>
 </li>
-<li><a href="https://github.com/clsid2/mpc-hc/releases">MPC-HC</a></li>
+<li><a href="https://github.com/vapoursynth/vapoursynth/releases">Vapoursynth</a>
+<ul>
+<li><a href="https://jaded-encoding-thaumaturgy.github.io/JET-guide/setup/">Setup guide</a></li>
+</ul>
+</li>
+<li><a href="https://mkvtoolnix.download/downloads.html">MKVToolNix</a></li>
 </ol>
 <doc-anchor-target id="finding-titleanglechapter-mpc-hc">
     <h2>
@@ -276,6 +282,80 @@ We can use ffprobe to check for PCM streams, and to check their stream ids. To d
 </ul>
 <p>Here is an example of a working command:</p>
 <p><code v-pre>ffmpeg -f dvdvideo -preindex True -title 2 -angle 2 -chapter_start 4 -chapter_end 8 -i example.iso -map 0 -c copy -codec:1 flac test.mkv</code></p>
+<doc-anchor-target id="correcting-sarpar">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#correcting-sarpar">#</doc-anchor-trigger>
+        <span>Correcting SAR/PAR</span>
+    </h2>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>This step, while complicated, is absolutely necessary for your DVD remux to playback correctly. A remux that does not follow this process (or, follows it incorrectly) is <strong>broken</strong>.</p>
+        </div>
+    </div>
+</div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>This process will require loading the remux into Vapoursynth, see the setup guide for details.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="explanation">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#explanation">#</doc-anchor-trigger>
+        <span>Explanation</span>
+    </h4>
+</doc-anchor-target>
+<p>DVDs store whats known as anamorphic video, this means that the video encoded on the disc has a different aspect ratio than how it is meant to be displayed.
+NTSC discs store a 720x480 resolution while PAL discs are 720x576, these are neither 4:3 nor 16:9.
+A <a href="https://en.wikipedia.org/wiki/Pixel_aspect_ratio">SAR (Sample aspect ratio) aka PAR (Pixel aspect ratio)</a> is applied to the image to stretch it to the intended aspect ratio.
+DVDs were meant primarily for CRT displays, which have <a href="https://en.wikipedia.org/wiki/Overscan">overscan</a>. Overscan was accounted for in the discs by having the <a href="https://en.wikipedia.org/wiki/Overscan#Overscan_amounts">active area</a> be below 720 pixels, so when the CRT stretches the image a second time nothing important is cropped and the extra stretch results in the true aspect ratio.
+Modern displays do not have overscan, nor do they stretch the image, this means that without correction every DVD will be displayed wrong, and we need to fix this for a remux.</p>
+<doc-anchor-target id="heuristics-to-identify-sarpar">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#heuristics-to-identify-sarpar">#</doc-anchor-trigger>
+        <span>Heuristics to identify SAR/PAR</span>
+    </h4>
+</doc-anchor-target>
+<p>Figuring out the correct SAR/PAR to use to correct for this issue is not an exact science. Over the years there have been many different standards formed for anamorphic video and figuring out which your DVD uses is not an intuitive process. The methods below will be most helpful for this process.</p>
+<doc-panel id="1-faded-column-check" collapsed>
+    <template #title>1. Faded column check</template>
+<p>We can the size of black/faded out columns on the image&#x27;s border, as this can indicate the active area.</p>
+</doc-panel>
+<doc-panel id="2-circle-check" collapsed>
+    <template #title>2. Circle check</template>
+<p>We can find an object meant to be a circle and checking which standard results in a perfect circle.</p>
+</doc-panel>
+<doc-panel id="3-text-logo-check" collapsed>
+    <template #title>3. Text/logo check</template>
+<p>We can check text or studio logos against a ground truth (Many studio logos can be found in square pixel form)</p>
+</doc-panel>
+<doc-panel id="4-ground-truth-check" collapsed>
+    <template #title>4. Ground truth check</template>
+<p>We can compare the DVD to a natively square pixel source (<strong>Upscales do not qualify</strong>)</p>
+</doc-panel>
 
                                 
                                 <!-- Required only on API pages -->
