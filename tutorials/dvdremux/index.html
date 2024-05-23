@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769722746435">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769737919194">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769722746435" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769737919194" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769722746435" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769737919194" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769722746435" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769737919194" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -301,7 +301,7 @@ We can use ffprobe to check for PCM streams, and to check their stream ids. To d
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>This step, while complicated, is absolutely necessary for your DVD remux to playback correctly. A remux that does not follow this process (or, follows it incorrectly) is <strong>broken</strong>.</p>
+<p>This step, while complicated, is absolutely necessary for your DVD remux to playback correctly. A remux that does not follow this process (or follows it incorrectly) is <strong>broken</strong>.</p>
         </div>
     </div>
 </div>
@@ -328,7 +328,7 @@ We can use ffprobe to check for PCM streams, and to check their stream ids. To d
         <span>Explanation</span>
     </h4>
 </doc-anchor-target>
-<p>DVDs store whats known as anamorphic video, this means that the video encoded on the disc has a different aspect ratio than how it is meant to be displayed.
+<p>DVDs store what&#x27;s known as anamorphic video. This means that the video encoded on the disc has a different aspect ratio than how it is meant to be displayed.
 NTSC discs store a 720x480 resolution while PAL discs are 720x576, these are neither 4:3 nor 16:9.
 A <a href="https://en.wikipedia.org/wiki/Pixel_aspect_ratio">SAR (Sample aspect ratio) aka PAR (Pixel aspect ratio)</a> is applied to the image to stretch it to the intended aspect ratio.
 DVDs were meant primarily for CRT displays, which have <a href="https://en.wikipedia.org/wiki/Overscan">overscan</a>. Overscan was accounted for in the discs by having the <a href="https://en.wikipedia.org/wiki/Overscan#Overscan_amounts">active area</a> be below 720 pixels, so when the CRT stretches the image a second time nothing important is cropped and the extra stretch results in the true aspect ratio.
