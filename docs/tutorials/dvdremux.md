@@ -123,7 +123,7 @@ Here is an example of a working command:
 ## Correcting SAR/PAR
 
 !!!
-This step, while complicated, is absolutely necessary for your DVD remux to playback correctly. A remux that does not follow this process (or, follows it incorrectly) is **broken**.
+This step, while complicated, is absolutely necessary for your DVD remux to playback correctly. A remux that does not follow this process (or follows it incorrectly) is **broken**.
 !!!
 
 !!!
@@ -131,7 +131,7 @@ This process will require loading the remux into Vapoursynth, see the setup guid
 !!!
 
 #### Explanation
-DVDs store whats known as anamorphic video, this means that the video encoded on the disc has a different aspect ratio than how it is meant to be displayed.
+DVDs store what's known as anamorphic video. This means that the video encoded on the disc has a different aspect ratio than how it is meant to be displayed.
 NTSC discs store a 720x480 resolution while PAL discs are 720x576, these are neither 4:3 nor 16:9.
 A [SAR (Sample aspect ratio) aka PAR (Pixel aspect ratio)](https://en.wikipedia.org/wiki/Pixel_aspect_ratio) is applied to the image to stretch it to the intended aspect ratio.
 DVDs were meant primarily for CRT displays, which have [overscan](https://en.wikipedia.org/wiki/Overscan). Overscan was accounted for in the discs by having the [active area](https://en.wikipedia.org/wiki/Overscan#Overscan_amounts) be below 720 pixels, so when the CRT stretches the image a second time nothing important is cropped and the extra stretch results in the true aspect ratio.
