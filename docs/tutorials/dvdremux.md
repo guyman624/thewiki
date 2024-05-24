@@ -7,6 +7,10 @@ description: Remux DVDs using FFmpeg
 
 This guide can be used to remux DVDs using FFmpeg and MPC-HC
 
+!!!
+Assistance is available [here](https://discord.gg/XTpc6Fa9eB) if needed.
+!!!
+
 ## Required
 
 1. [MPC-HC](https://github.com/clsid2/mpc-hc/releases)
@@ -143,16 +147,53 @@ Figuring out the correct SAR/PAR to use to correct for this issue is not an exac
 
 ==- 1. Faded column check
 We can the size of black/faded out columns on the image's border, as this can indicate the active area.
+
+![image](https://github.com/guyman624/thewiki/assets/82007920/bee9d99b-c46d-41cf-afb8-546f53da6c89)
+Here we have a frame from a DVD, we can see that the left and right borders have a fade to black
+If you look closely, the left border has a fade of 5 pixels, while the right has a fade of 4 pixels.
+720 - (5 + 4) = 711, so we now have a rough estimate of an active area. Note that the fade on each border can be off by +-1 pixel often, so we still need to verify this later.
+NTSC has a standard which specifies a 710.85x486 active area, with 711x480 also being valid.
+Since DVDs are all cropped to 480 we have no easy way of telling, but a good assumption to make is that if the disc comes from an analog transfer it's more likely to use the 710.85x486 active area.
+To be further sure of our outcome we can use the other methods in combination with this.
 ==-
 
 ==- 2. Circle check
 We can find an object meant to be a circle and checking which standard results in a perfect circle.
+
+This one is pretty simple, you find a object that you believe is meant to be a perfect circle and compare different known SAR/PAR standards to a perfect circle that you've overlaid in an image editor.
+![image](https://github.com/guyman624/thewiki/assets/82007920/a4d51b7e-b38f-4308-9a8c-30a80889d2f9)
+An example of an exact match using a 2560:2133 SAR/PAR (711x480 active area).
 ==-
 
 ==- 3. Text/logo check
 We can check text or studio logos against a ground truth (Many studio logos can be found in square pixel form)
+
+More or less the same thing as the circle check but using a studio logo instead.
+![image](https://github.com/guyman624/thewiki/assets/82007920/f433ef74-1a15-4216-9c0c-d6100ee1df3a)
+This show ended up being a 4320:4739 SAR/PAR (710.85x486 active area), a difference that the faded column check is unlikely to determine.
 ==-
 
 ==- 4. Ground truth check
 We can compare the DVD to a natively square pixel source (**Upscales do not qualify**)
+
+This one is mainly if you have a DVD only episode of a show. You can downscale the Blu-ray to 864x486, crop it to 864x480, then see which SAR/PAR standard applied to the DVD matches blu-ray.
 ==-
+
+In order to apply a SAR/PAR transform to check using these methods refer to this Vapoursynth code:
+```
+new_sar = vstools.Sar.from_ar(16, 9, 711, 480)
+
+if new_sar > 1:
+    width, height = clip.width * float(new_sar), clip.height
+elif new_sar < 1:
+    width, height = clip.width, clip.height / float(new_sar)
+
+
+clip_resized = vskernels.Bicubic.scale(clip, vstools.mod2(width), vstools.mod2(height), keep_ar=True, sar=new_sar)
+```
+In this case we have a 16:9 DVD with a 711x480 active area, replace the relevant variables to fit your usecase.
+
+After you've determined the correct SAR/PAR we can print out the new display dimensions to use with mkvpropedit like so:
+```
+print([round(width), round(height)])
+```
