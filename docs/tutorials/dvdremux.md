@@ -35,10 +35,10 @@ is to use MPC-HC
 (mpv and VLC lack these capabilities).
 
 1. Mount your ISO/insert your DVD.
-2. In MPC, click *File > Open DVD/BD* and select the root directory of the DVD or folder containing VIDEO_TS.
+2. In MPC, click _File > Open DVD/BD_ and select the root directory of the DVD or folder containing VIDEO_TS.
 
 !!!
-You can click *Navigate > Title Menu* to skip the trailers/warnings and get to the Menu.
+You can click _Navigate > Title Menu_ to skip the trailers/warnings and get to the Menu.
 !!!
 
 Once you are in the DVD Menu,
@@ -46,9 +46,9 @@ you should be able to navigate to all the episodes.
 You will need to take note of a few things
 about the particular disc you are remuxing.
 
-- Find out if the disc has multiple angles. You can change the current angle by going to *Play > Video Angle*
-- Find out if the episodes are all in 1 title, or if each episode has its own title. You can view the current title by going to *Navigate > Titles*
-- If each episode does not have its own title, find out where the Chapter marks are for each episode. You can view the current chapter by going to *Navigate > Chapters*
+- Find out if the disc has multiple angles. You can change the current angle by going to _Play > Video Angle_
+- Find out if the episodes are all in 1 title, or if each episode has its own title. You can view the current title by going to _Navigate > Titles_
+- If each episode does not have its own title, find out where the Chapter marks are for each episode. You can view the current chapter by going to _Navigate > Chapters_
 
 ## Checking for PCM
 
@@ -103,12 +103,12 @@ ffmpeg -f dvdvideo -preindex True -title <title>
 ```
 
 Replace \<title\> with the title you are looking to remux.
-This will be an integer from 1—99*.
+This will be an integer from 1—99\*.
 If neither of the following apply to your disc,
 skip to the end.
 
-*\*Although 0 is a valid title number,*
-*ffmpeg treats it the same as title 1.*
+_\*Although 0 is a valid title number,_
+_ffmpeg treats it the same as title 1._
 
 ==- DVDs with multiple angles
 
@@ -210,7 +210,6 @@ nor do they stretch the image.
 This means that without correction,
 every DVD will be displayed wrong,
 and we need to fix this for a remux.
-
 
 ### Heuristics to identify SAR/PAR
 
