@@ -230,18 +230,18 @@ is not an intuitive process.
 The methods below will be most helpful for this process.
 
 Heres a table of the most common standards you'll see on DVDs:
-+++ NTSC
 
-||| 4:3
-- 4320:4739 SAR/PAR, (710.85x486 Active area)
-- 640:711 SAR/PAR, (711x480 Active area)
-- 160:177 SAR/PAR, (708x480 Active area)
-- 10:11 SAR/PAR, (704x480 Active area)
-||| 16:9
-- 2560:2133 SAR/PAR, (711x480 Active area)
-- 640:531 SAR/PAR, (708x480 Active area)
-- 40:33 SAR/PAR, (704x480 Active area)
-|||
+#### NTSC
+
+| Aspect Ratio | SAR/PAR   | Active Area |
+| ------------ | --------- | ----------- |
+| 4:3          | 4320:4739 | 710.85x486  |
+|              | 640:711   | 711x480     |
+|              | 160:177   | 708x480     |
+|              | 10:11     | 704x480     |
+| 16:9         | 2560:2133 | 711x480     |
+|              | 640:531   | 708x480     |
+|              | 40:33     | 704x480     |
 
 +++ PAL
 
