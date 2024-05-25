@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769979121415">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769980246136">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769979121415" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769980246136" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769979121415" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769980246136" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769979121415" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769979121415" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769980246136" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769980246136" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -158,7 +158,7 @@
         <span>DVD Remuxing</span>
     </h1>
 </doc-anchor-target>
-<p>This guide can be used to remux DVDs using MPC-HC, FFmpeg, Vapoursynth, and MKVToolNix.</p>
+<p>This guide can be used to remux DVDs using MPC-HC, FFmpeg, VapourSynth, and MKVToolNix.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -189,7 +189,7 @@
 <li><a href="https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.0-latest-win64-gpl-7.0.zip">Quick link for Windows x64</a></li>
 </ul>
 </li>
-<li><a href="https://github.com/vapoursynth/vapoursynth/releases">Vapoursynth</a>
+<li><a href="https://github.com/vapoursynth/vapoursynth/releases">VapourSynth</a>
 <ul>
 <li><a href="https://jaded-encoding-thaumaturgy.github.io/JET-guide/setup/">Setup guide</a></li>
 </ul>
@@ -396,7 +396,7 @@ is <strong>broken</strong>.</p>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>This process will require loading the remux into Vapoursynth.
+<p>This process will require loading the remux into VapourSynth.
 See the setup guide for details.</p>
         </div>
     </div>
@@ -607,7 +607,7 @@ and then apply different SAR/PAR standards
 until the DVD matches the Blu-ray.</p>
 </doc-panel>
 <p>In order to apply a SAR/PAR transform to check using these methods,
-refer to this Vapoursynth code snippet:</p>
+refer to this VapourSynth code snippet:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">from vstools import Sar, mod2
 from vskernels import Bicubic
