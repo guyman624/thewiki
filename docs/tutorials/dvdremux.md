@@ -5,7 +5,7 @@ description: Remux DVDs using FFmpeg
 
 # DVD Remuxing
 
-This guide can be used to remux DVDs using FFmpeg and MPC-HC.
+This guide can be used to remux DVDs using MPC-HC, FFmpeg, Vapoursynth, and MKVToolNix.
 
 !!!
 Assistance is available in [this Discord server](https://discord.gg/XTpc6Fa9eB) if required.
@@ -129,7 +129,9 @@ This will be an integer from 1—9.
 If you have multiple episodes per title,
 you need to add:
 
-`-chapter_start <start_chap> -chapter_end <end_chap>`
+```shell
+-chapter_start <start_chap> -chapter_end <end_chap>
+```
 
 Replace \<start_chap\> with the first chapter of the episode you are remuxing.
 Replace \<end_chap\> with the last chapter of the episode, inclusive.
@@ -145,13 +147,17 @@ you can exclude the respective argument.
 After you have added the rest of the required flags,
 you can end the command with:
 
-`-i <path_to_dvd> -map 0 -c copy <filename>.mkv`
+```shell
+-i <path_to_dvd> -map 0 -c copy <filename>.mkv
+```
 
 ==- DVDs with PCM Audio
 
 If your disc has PCM Audio, add:
 
-`-codec:<stream_id> flac`
+```shell
+-codec:<stream_id> flac
+```
 
 **After** `-c copy` in the final part of the command.
 
@@ -169,7 +175,9 @@ Replace:
 
 Here is an example of a working command:
 
-`ffmpeg -f dvdvideo -preindex True -title 2 -angle 2 -chapter_start 4 -chapter_end 8 -i example.iso -map 0 -c copy -codec:1 flac test.mkv`
+```shell
+ffmpeg -f dvdvideo -preindex True -title 2 -angle 2 -chapter_start 4 -chapter_end 8 -i example.iso -map 0 -c copy -codec:1 flac test.mkv
+```
 
 ## Correcting SAR/PAR
 
