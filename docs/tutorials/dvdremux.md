@@ -329,6 +329,8 @@ to use with mkvpropedit like so:
 print([round(width), round(height)])
 ```
 
+### Applying the corrected SAR/PAR
+
 Once we've obtained these new display dimensions,
 we can edit the mkv with the following terminal command:
 
