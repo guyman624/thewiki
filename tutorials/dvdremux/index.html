@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769913060936">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769915636297">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,11 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769913060936" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769915636297" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769913060936" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769915636297" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769913060936" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769915636297" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769915636297" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -157,7 +158,7 @@
         <span>DVD Remuxing</span>
     </h1>
 </doc-anchor-target>
-<p>This guide can be used to remux DVDs using FFmpeg and MPC-HC</p>
+<p>This guide can be used to remux DVDs using FFmpeg and MPC-HC.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -171,7 +172,7 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Assistance is available <a href="https://discord.gg/XTpc6Fa9eB">here</a> if needed.</p>
+<p>Assistance is available in <a href="https://discord.gg/XTpc6Fa9eB">this Discord server</a> if required.</p>
         </div>
     </div>
 </div>
@@ -201,7 +202,17 @@
         <span>Finding Title/Angle/Chapter (MPC-HC)</span>
     </h2>
 </doc-anchor-target>
-<p>DVDs can be split into Titles, Angles and Chapters. A title can be seen as a playlist (or group of playlists if the disc has multiple angles). Angles are used for many things from switching between different editions of the video (Broadcast / Home Video, Theatrical / Director&#x27;s Cut), to switching between English and Japanese Credits/Typesetting. Note that each angle may have it&#x27;s own set of chapters. The simplest way to find all 3 for the episodes you are trying to remux is to use MPC-HC. (MPV and VLC lack these capabilities)</p>
+<p>DVDs can be split into Titles, Angles, and Chapters.
+A title can be seen as a playlist
+(or group of playlists if the disc has multiple angles).
+Angles are used for many things,
+from switching between different editions of the video (Broadcast / Home Video, Theatrical / Director&#x27;s Cut),
+to switching between English and Japanese Credits/Typesetting.
+Note that each angle may have it&#x27;s own set of chapters.
+The simplest way to find all 3
+for the episodes you are trying to remux
+is to use MPC-HC
+(mpv and VLC lack these capabilities).</p>
 <ol>
 <li>Mount your ISO/insert your DVD.</li>
 <li>In MPC, click <em>File &gt; Open DVD/BD</em> and select the root directory of the DVD or folder containing VIDEO_TS.</li>
@@ -223,7 +234,10 @@
         </div>
     </div>
 </div>
-<p>Once you are in the DVD Menu, you should be able to navigate to all the episodes. You will need to take note of a few things about the particular disc you are remuxing.</p>
+<p>Once you are in the DVD Menu,
+you should be able to navigate to all the episodes.
+You will need to take note of a few things
+about the particular disc you are remuxing.</p>
 <ul>
 <li>Find out if the disc has multiple angles. You can change the current angle by going to <em>Play &gt; Video Angle</em></li>
 <li>Find out if the episodes are all in 1 title, or if each episode has its own title. You can view the current title by going to <em>Navigate &gt; Titles</em></li>
@@ -235,9 +249,15 @@
         <span>Checking for PCM</span>
     </h2>
 </doc-anchor-target>
-<p>If your DVD has PCM Audio, it needs to be converted to another format during the remuxing process.
-We can use ffprobe to check for PCM streams, and to check their stream ids. To do this, run the command:</p>
-<p><code v-pre>ffprobe -f dvdvideo -title &lt;title&gt; -i &lt;path_to_dvd&gt;</code></p>
+<p>If your DVD has PCM Audio,
+it needs to be converted to another format
+during the remuxing process.
+We can use ffprobe to check for PCM streams,
+and to check their stream ids.
+To do this, run the command:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">ffprobe -f dvdvideo -title &lt;title&gt; -i &lt;path_to_dvd&gt;</code></pre>
+</doc-codeblock></div>
 <p>Replace:</p>
 <ul>
 <li>&lt;title&gt; with the title number you got from MPC-HC. This will be an integer from 1-99.</li>
@@ -246,7 +266,7 @@ We can use ffprobe to check for PCM streams, and to check their stream ids. To d
 <doc-panel id="example-ffprobe-output-snippet" collapsed>
     <template #title>Example ffprobe output snippet</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Input #0, dvdvideo, from 'D:\VIDEO_TS':
+<pre class="language-bash"><code v-pre class="language-bash">Input #0, dvdvideo, from 'D:\VIDEO_TS':
   Duration: 00:00:35.50, start: 0.000000, bitrate: N/A
   Stream #0:0[0x1e0]: Video: mpeg2video, yuv420p(tv, top first), 720x480, SAR 8:9 DAR 4:3, 29.97 fps, 29.97 tbr, 90k tbn
       Side data:
@@ -254,45 +274,72 @@ We can use ffprobe to check for PCM streams, and to check their stream ids. To d
   Stream #0:1[0xa0](jpn): Audio: pcm_dvd, 48000 Hz, stereo, s16, 1536 kb/s</code></pre>
 </doc-codeblock></div>
 </doc-panel>
-<p>In the example case, there is one audio stream and it is PCM. This stream will need to be converted to another lossless format. Since it is <code v-pre>Stream #0:1</code>, the stream id is 1.</p>
+<p>In the example case,
+there is one audio stream and it is PCM.
+This stream will need to be converted
+to another lossless format.
+Since it is <code v-pre>Stream #0:1</code>,
+the stream id is <code v-pre>1</code>.</p>
 <doc-anchor-target id="remuxing">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#remuxing">#</doc-anchor-trigger>
         <span>Remuxing</span>
     </h2>
 </doc-anchor-target>
-<p>To remux, you need the latest FFmpeg from the link above. Other builds may not have the proper compile flags to include DVD Demuxing support.</p>
-<p>We need to build a ffmpeg command for you to use. You can start with a base of:</p>
-<p><code v-pre>ffmpeg -f dvdvideo -preindex True -title &lt;title&gt;</code></p>
-<p>Replace &lt;title&gt; with the title you are looking to remux. This will be an integer from 1-99*. If neither of the following apply to your disc, skip to the end.</p>
-<p><em>*Although 0 is a valid title number, ffmpeg treats it the same as title 1.</em></p>
+<p>To remux,
+you need the latest FFmpeg from the link above.
+Other builds may not have the proper compile flags
+to include DVD Demuxing support.</p>
+<p>We need to build a ffmpeg command for you to use.
+You can start with a base of:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">ffmpeg -f dvdvideo -preindex True -title &lt;title&gt;</code></pre>
+</doc-codeblock></div>
+<p>Replace &lt;title&gt; with the title you are looking to remux.
+This will be an integer from 1—99*.
+If neither of the following apply to your disc,
+skip to the end.</p>
+<p><em>*Although 0 is a valid title number,</em>
+<em>ffmpeg treats it the same as title 1.</em></p>
 <doc-panel id="dvds-with-multiple-angles" collapsed>
     <template #title>DVDs with multiple angles</template>
 <p>If you want to rip a non-default angle from the disc, add:</p>
-<p><code v-pre>-angle &lt;angle&gt;</code></p>
-<p>Replace &lt;angle&gt; with the angle number you are looking to remux. This will be an integer from 1-9.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">-angle &lt;angle&gt;</code></pre>
+</doc-codeblock></div>
+<p>Replace &lt;angle&gt; with the angle number
+you are looking to remux.
+This will be an integer from 1—9.</p>
 </doc-panel>
 <doc-panel id="dvds-with-multiple-episodes-per-title" collapsed>
     <template #title>DVDs with multiple episodes per Title</template>
-<p>If you have multiple episodes per title, you need to add:</p>
+<p>If you have multiple episodes per title,
+you need to add:</p>
 <p><code v-pre>-chapter_start &lt;start_chap&gt; -chapter_end &lt;end_chap&gt;</code></p>
-<p>Replace &lt;start_chap&gt; with the first chapter of the episode you are remuxing. Replace &lt;end_chap&gt; with the last chapter of the episode, inclusive. Both accept an integer from 1-99</p>
-<p>If you are including the first or last chapter, you can exclude the respective argument.</p>
+<p>Replace &lt;start_chap&gt; with the first chapter of the episode you are remuxing.
+Replace &lt;end_chap&gt; with the last chapter of the episode, inclusive.
+Both accept an integer from 1—99</p>
+<p>If you are including the first or last chapter,
+you can exclude the respective argument.</p>
 </doc-panel>
 <doc-anchor-target id="final-piece">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#final-piece">#</doc-anchor-trigger>
         <span>Final Piece</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
-<p>After you have added the rest of the required flags, you can end the command with:</p>
+<p>After you have added the rest of the required flags,
+you can end the command with:</p>
 <p><code v-pre>-i &lt;path_to_dvd&gt; -map 0 -c copy &lt;filename&gt;.mkv</code></p>
 <doc-panel id="dvds-with-pcm-audio" collapsed>
     <template #title>DVDs with PCM Audio</template>
 <p>If your disc has PCM Audio, add:</p>
 <p><code v-pre>-codec:&lt;stream_id&gt; flac</code></p>
 <p><strong>After</strong> <code v-pre>-c copy</code> in the final part of the command.</p>
-<p>Replace &lt;stream_id&gt; with the stream id you got using ffprobe. If you have multiple PCM streams, add another one for each stream. This will convert the PCM audio to FLAC.</p>
+<p>Replace &lt;stream_id&gt; with the stream id you got using ffprobe.
+If you have multiple PCM streams,
+add another one for each stream.
+This will convert the PCM audio to FLAC.</p>
 </doc-panel>
 <p>Replace:</p>
 <ul>
@@ -320,7 +367,11 @@ We can use ffprobe to check for PCM streams, and to check their stream ids. To d
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>This step, while complicated, is absolutely necessary for your DVD remux to playback correctly. A remux that does not follow this process (or follows it incorrectly) is <strong>broken</strong>.</p>
+<p>This step, while complicated,
+is absolutely necessary for your DVD remux to playback correctly.
+A remux that does not follow this process
+(or follows it incorrectly)
+is <strong>broken</strong>.</p>
         </div>
     </div>
 </div>
@@ -337,28 +388,51 @@ We can use ffprobe to check for PCM streams, and to check their stream ids. To d
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>This process will require loading the remux into Vapoursynth, see the setup guide for details.</p>
+<p>This process will require loading the remux into Vapoursynth.
+See the setup guide for details.</p>
         </div>
     </div>
 </div>
 <doc-anchor-target id="explanation">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#explanation">#</doc-anchor-trigger>
         <span>Explanation</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
-<p>DVDs store what&#x27;s known as anamorphic video. This means that the video encoded on the disc has a different aspect ratio than how it is meant to be displayed.
-NTSC discs store a 720x480 resolution while PAL discs are 720x576, these are neither 4:3 nor 16:9.
-A <a href="https://en.wikipedia.org/wiki/Pixel_aspect_ratio">SAR (Sample aspect ratio) aka PAR (Pixel aspect ratio)</a> is applied to the image to stretch it to the intended aspect ratio.
-DVDs were meant primarily for CRT displays, which have <a href="https://en.wikipedia.org/wiki/Overscan">overscan</a>. Overscan was accounted for in the discs by having the <a href="https://en.wikipedia.org/wiki/Overscan#Overscan_amounts">active area</a> be below 720 pixels, so when the CRT stretches the image a second time nothing important is cropped and the extra stretch results in the true aspect ratio.
-Modern displays do not have overscan, nor do they stretch the image, this means that without correction every DVD will be displayed wrong, and we need to fix this for a remux.</p>
+<p>DVD videos are stored as what&#x27;s known as anamorphic video.
+This means that the video encoded on the disc
+have a different aspect ratio
+from how it is meant to be displayed.
+NTSC discs store a 720x480 resolution
+while PAL discs are 720x576,
+and neither of these are exactly 4:3 or 16:9.</p>
+<p>A <a href="https://en.wikipedia.org/wiki/Pixel_aspect_ratio">SAR (Sample aspect ratio) aka PAR (Pixel aspect ratio)</a>
+is applied to the image to stretch it to the intended aspect ratio.
+DVDs were meant primarily for CRT displays,
+which have <a href="https://en.wikipedia.org/wiki/Overscan">overscan</a>.
+Overscan was accounted for in the discs
+by having the <a href="https://en.wikipedia.org/wiki/Overscan#Overscan_amounts">active area</a> be below 720 pixels,
+so when the CRT stretches the image a second time
+nothing important is cropped
+and the extra stretch results in the true aspect ratio.
+Modern displays have neither overscan,
+nor do they stretch the image.
+This means that without correction,
+every DVD will be displayed wrong,
+and we need to fix this for a remux.</p>
 <doc-anchor-target id="heuristics-to-identify-sarpar">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#heuristics-to-identify-sarpar">#</doc-anchor-trigger>
         <span>Heuristics to identify SAR/PAR</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
-<p>Figuring out the correct SAR/PAR to use to correct for this issue is not an exact science. Over the years there have been many different standards formed for anamorphic video and figuring out which your DVD uses is not an intuitive process. The methods below will be most helpful for this process.</p>
+<p>Figuring out the correct SAR/PAR
+to correct for this issue
+is not an exact science.
+Over the years many different standards have been formed,
+and figuring out which your DVD uses
+is not an intuitive process.
+The methods below will be most helpful for this process.</p>
 <doc-panel id="1-faded-column-check" collapsed>
     <template #title>1. Faded column check</template>
 <p>We can the size of black/faded out columns on the image&#x27;s border, as this can indicate the active area.</p>
@@ -366,68 +440,112 @@ Modern displays do not have overscan, nor do they stretch the image, this means 
     <img src="https://github.com/guyman624/thewiki/assets/82007920/bee9d99b-c46d-41cf-afb8-546f53da6c89" alt="image">
     <figcaption class="caption">image</figcaption>
 </figure>
-Here we have a frame from a DVD, we can see that the left and right borders have a fade to black
-If you look closely, the left border has a fade of 5 pixels, while the right has a fade of 4 pixels.
-720 - (5 + 4) = 711, so we now have a rough estimate of an active area. Note that the fade on each border can be off by +-1 pixel often, so we still need to verify this later.
-NTSC has a standard which specifies a 710.85x486 active area, with 711x480 also being valid.
-Since DVDs are all cropped to 480 we have no easy way of telling, but a good assumption to make is that if the disc comes from an analog transfer it&#x27;s more likely to use the 710.85x486 active area.
-To be further sure of our outcome we can use the other methods in combination with this.</p>
+Here we have a frame from a DVD.
+We can see that the left and right borders have a fade to black.
+If you look closely,
+the left border has a fade of 5 pixels,
+while the right has a fade of 4 pixels.
+720 - (5 + 4) = 711,
+so we now have a rough estimation of the active area.
+Note that the fade on each border can often be off by +-1 pixel,
+so we still need to verify this later.</p>
+<p>NTSC has a standard which specifies an active area of 710.85x486,
+with 711x480 also being a valid resolution.
+Since DVDs are all cropped to 480,
+we have no easy way of telling for sure if it&#x27;s 710.85,
+but a good assumption to make
+is that if the disc comes from an analog transfer,
+it&#x27;s more likely to use the 710.85x486 active area.</p>
+<p>To increase our confidence in these results,
+we can combine them with other methods.</p>
 </doc-panel>
 <doc-panel id="2-circle-check" collapsed>
     <template #title>2. Circle check</template>
-<p>We can find an object meant to be a circle and checking which standard results in a perfect circle.</p>
-<p>This one is pretty simple, you find a object that you believe is meant to be a perfect circle and compare different known SAR/PAR standards to a perfect circle that you&#x27;ve overlaid in an image editor.
-<figure class="content-center">
+<p>We can find an object meant to be a circle
+and check which standard results in a perfect circle.</p>
+<p>This one is pretty simple.
+You find an object that you believe is meant to be a perfect circle
+and compare different known SAR/PAR standards to a perfect circle
+that you&#x27;ve overlaid in an image editor.</p>
+<p><figure class="content-center">
     <img src="https://github.com/guyman624/thewiki/assets/82007920/a4d51b7e-b38f-4308-9a8c-30a80889d2f9" alt="image">
     <figcaption class="caption">image</figcaption>
 </figure>
-An example of an exact match using a 2560:2133 SAR/PAR (711x480 active area).</p>
+</p>
+<p>An example of an exact match using a SAR/PAR of 2560:2133 (711x480 active area).</p>
 </doc-panel>
 <doc-panel id="3-text-logo-check" collapsed>
     <template #title>3. Text/logo check</template>
-<p>We can check text or studio logos against a ground truth (Many studio logos can be found in square pixel form)</p>
-<p>More or less the same thing as the circle check but using a studio logo instead.
-<figure class="content-center">
+<p>We can check text or studio logos
+against a ground truth
+(as many studio logos can be found in square pixel form).</p>
+<p>More or less the same thing as the circle method,
+but we use a studio logo instead.</p>
+<p><figure class="content-center">
     <img src="https://github.com/guyman624/thewiki/assets/82007920/f433ef74-1a15-4216-9c0c-d6100ee1df3a" alt="image">
     <figcaption class="caption">image</figcaption>
 </figure>
-This show ended up being a 4320:4739 SAR/PAR (710.85x486 active area), a difference that the faded column check is unlikely to determine.</p>
+</p>
+<p>This show ended up having a SAR/PAR of 4320:4739 (710.85x486 active area),
+a difference the faded column check would be unlikely to determine.</p>
 </doc-panel>
 <doc-panel id="4-ground-truth-check" collapsed>
     <template #title>4. Ground truth check</template>
-<p>We can compare the DVD to a natively square pixel source (<strong>Upscales do not qualify</strong>)</p>
-<p>This one is mainly if you have a DVD only episode of a show. You can downscale the Blu-ray to 864x486, crop it to 864x480, then see which SAR/PAR standard applied to the DVD matches blu-ray.</p>
+<p>We can compare the DVD to a natively square pixel source (<strong>Upscales do not qualify</strong>).</p>
+<p>This method is mainly for episodes
+that were only released on DVD
+when Blu-rays exist for other episodes,
+such as DVD-only OVAs.
+You can downscale the Blu-ray to 864x486,
+crop it to 864x480,
+and then apply different SAR/PAR standards
+until the DVD matches the Blu-ray.</p>
 </doc-panel>
-<p>In order to apply a SAR/PAR transform to check using these methods refer to this Vapoursynth code:</p>
+<p>In order to apply a SAR/PAR transform to check using these methods,
+refer to this Vapoursynth code snippet:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">new_sar = vstools.Sar.from_ar(16, 9, 711, 480)
+<pre class="language-python"><code v-pre class="language-python">from vstools import Sar, mod2
+from vskernels import Bicubic
+
+new_sar = Sar.from_ar(16, 9, 711, 480)
 
 if new_sar &gt; 1:
     width, height = clip.width * float(new_sar), clip.height
 elif new_sar &lt; 1:
     width, height = clip.width, clip.height / float(new_sar)
 
-clip_resized = vskernels.Bicubic.scale(clip, vstools.mod2(width), vstools.mod2(height), keep_ar=True, sar=new_sar)</code></pre>
+clip_resized = Bicubic.scale(clip, mod2(width), mod2(height), keep_ar=True, sar=new_sar)</code></pre>
 </doc-codeblock></div>
-<p>In this case we have a 16:9 DVD with a 711x480 active area, replace the relevant variables to fit your usecase.</p>
-<p>After you&#x27;ve determined the correct SAR/PAR we can print out the new display dimensions to use with mkvpropedit like so:</p>
+<p>In this example,
+we have a 16:9 DVD with an active area of 711x480.
+These values should be replaced to fit your use-case.</p>
+<p>Once you&#x27;ve determined the correct SAR/PAR,
+we can print out the new display dimensions
+to use with mkvpropedit like so:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">print([round(width), round(height)])</code></pre>
+<pre class="language-python"><code v-pre class="language-python">print([round(width), round(height)])</code></pre>
 </doc-codeblock></div>
-<p>After obtaining the new display dimensions you can update your mkv file with them with:</p>
+<p>Once we&#x27;ve obtained these new display dimensions,
+we can edit the mkv with the following terminal command:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">mkvpropedit test.mkv --edit track:v1 --set display-width=864 --set display-height=480</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">mkvpropedit test.mkv --edit track:v1 --set display-width=864 --set display-height=480</code></pre>
 </doc-codeblock></div>
-<p>Replacing display-width and display-height with the values you obtained.</p>
-<p>This command is incomplete however, in order for fully correct playback we need to additionally set the cropping flags so the video is cropped to it&#x27;s respective active area. This can be done like so:</p>
+<p>Replace <code v-pre>display-width</code> and <code v-pre>display-height</code> with the values you obtained.</p>
+<p>This command is incomplete, however.
+In order for fully correct playback
+we need to set additional cropping flags
+so the video is cropped to it&#x27;s respective active area.
+This can be done by adding the following to the above command:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">--set pixel-crop-left=5 --set pixel-crop-right=4</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">--set pixel-crop-left=5 --set pixel-crop-right=4</code></pre>
 </doc-codeblock></div>
-<p>Once again, replace these values with what fits your source, since this example is a 711 active area we crop to 711 pixels.
-If your disc has black borders on the top or bottom you should additionally set the top/bottom pixel crop flags.
-An example of a complete command would be like so:</p>
+<p>Again, replace these values with what fits your source.
+This example is for a 711 active area, so we crop to 711 pixels.</p>
+<p>If your disc has black borders on the top or bottom,
+you should additionally set the top/bottom pixel crop flags.</p>
+<p>Below is an example of a complete command:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">mkvpropedit test.mkv --edit track:v1 --set display-width=864 --set display-height=480 --set pixel-crop-left=5 --set pixel-crop-right=4 --set pixel-crop-top=4</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">mkvpropedit test.mkv --edit track:v1 --set display-width=864 --set display-height=480 --set pixel-crop-left=5 --set pixel-crop-right=4 --set pixel-crop-top=4</code></pre>
 </doc-codeblock></div>
 <p>After this your SAR/PAR correction is done and the DVD remux is complete.</p>
 
@@ -481,6 +599,6 @@ An example of a complete command would be like so:</p>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "DVD Remuxing", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "DVD Remuxing", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
