@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769915636297">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769916542627">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769915636297" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769916542627" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769915636297" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769916542627" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769915636297" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769915636297" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769916542627" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769916542627" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -158,7 +158,7 @@
         <span>DVD Remuxing</span>
     </h1>
 </doc-anchor-target>
-<p>This guide can be used to remux DVDs using FFmpeg and MPC-HC.</p>
+<p>This guide can be used to remux DVDs using MPC-HC, FFmpeg, Vapoursynth, and MKVToolNix.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -315,7 +315,9 @@ This will be an integer from 1—9.</p>
     <template #title>DVDs with multiple episodes per Title</template>
 <p>If you have multiple episodes per title,
 you need to add:</p>
-<p><code v-pre>-chapter_start &lt;start_chap&gt; -chapter_end &lt;end_chap&gt;</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">-chapter_start &lt;start_chap&gt; -chapter_end &lt;end_chap&gt;</code></pre>
+</doc-codeblock></div>
 <p>Replace &lt;start_chap&gt; with the first chapter of the episode you are remuxing.
 Replace &lt;end_chap&gt; with the last chapter of the episode, inclusive.
 Both accept an integer from 1—99</p>
@@ -330,11 +332,15 @@ you can exclude the respective argument.</p>
 </doc-anchor-target>
 <p>After you have added the rest of the required flags,
 you can end the command with:</p>
-<p><code v-pre>-i &lt;path_to_dvd&gt; -map 0 -c copy &lt;filename&gt;.mkv</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">-i &lt;path_to_dvd&gt; -map 0 -c copy &lt;filename&gt;.mkv</code></pre>
+</doc-codeblock></div>
 <doc-panel id="dvds-with-pcm-audio" collapsed>
     <template #title>DVDs with PCM Audio</template>
 <p>If your disc has PCM Audio, add:</p>
-<p><code v-pre>-codec:&lt;stream_id&gt; flac</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">-codec:&lt;stream_id&gt; flac</code></pre>
+</doc-codeblock></div>
 <p><strong>After</strong> <code v-pre>-c copy</code> in the final part of the command.</p>
 <p>Replace &lt;stream_id&gt; with the stream id you got using ffprobe.
 If you have multiple PCM streams,
@@ -347,7 +353,9 @@ This will convert the PCM audio to FLAC.</p>
 <li>&lt;filename&gt; with what you would like the resulting file to be named.</li>
 </ul>
 <p>Here is an example of a working command:</p>
-<p><code v-pre>ffmpeg -f dvdvideo -preindex True -title 2 -angle 2 -chapter_start 4 -chapter_end 8 -i example.iso -map 0 -c copy -codec:1 flac test.mkv</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">ffmpeg -f dvdvideo -preindex True -title 2 -angle 2 -chapter_start 4 -chapter_end 8 -i example.iso -map 0 -c copy -codec:1 flac test.mkv</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="correcting-sarpar">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#correcting-sarpar">#</doc-anchor-trigger>
