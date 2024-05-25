@@ -188,7 +188,6 @@ if new_sar > 1:
 elif new_sar < 1:
     width, height = clip.width, clip.height / float(new_sar)
 
-
 clip_resized = vskernels.Bicubic.scale(clip, vstools.mod2(width), vstools.mod2(height), keep_ar=True, sar=new_sar)
 ```
 In this case we have a 16:9 DVD with a 711x480 active area, replace the relevant variables to fit your usecase.
@@ -197,3 +196,20 @@ After you've determined the correct SAR/PAR we can print out the new display dim
 ```
 print([round(width), round(height)])
 ```
+
+After obtaining the new display dimensions you can update your mkv file with them with:
+```
+mkvpropedit test.mkv --edit track:v1 --set display-width=864 --set display-height=480
+```
+Replacing display-width and display-height with the values you obtained.
+
+This command is incomplete however, in order for fully correct playback we need to additionally set the cropping flags so the video is cropped to it's respective active area. This can be done like so:
+```
+--set pixel-crop-left=5 --set pixel-crop-right=4
+```
+Once again, replace these values with what fits your source, since this example is a 711 active area we crop to 711 pixels.
+If your disc has black borders on the top or bottom you should additionally set the top/bottom pixel crop flags.
+An example of a complete command would be like so:
+```
+mkvpropedit test.mkv --edit track:v1 --set display-width=864 --set display-height=480 --set pixel-crop-left=5 --set pixel-crop-right=4 --set pixel-crop-top=4```
+After this your SAR/PAR correction is done and the DVD remux is complete.
