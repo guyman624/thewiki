@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769929228935">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769929871904">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769929228935" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769929871904" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769929228935" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769929871904" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769929228935" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769929228935" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769929871904" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769929871904" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -442,33 +442,61 @@ and figuring out which your DVD uses
 is not an intuitive process.
 The methods below will be most helpful for this process.</p>
 <p>Heres a table of the most common standards you&#x27;ll see on DVDs:</p>
-<doc-tabs>
-<doc-tab v-cloak id="ntsc">
-<template #title>NTSC</template>
-<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
-    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
-        <span>4:3</span>
-    </div>
-    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
-        <span>16:9</span>
-    </div>
-    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
-<ul>
-<li>4320:4739 SAR/PAR, (710.85x486 Active area)</li>
-<li>640:711 SAR/PAR, (711x480 Active area)</li>
-<li>160:177 SAR/PAR, (708x480 Active area)</li>
-<li>10:11 SAR/PAR, (704x480 Active area)</li>
-</ul>
-    </div>
-    <div class="px-5 py-3 docs-columns-content">
-<ul>
-<li>2560:2133 SAR/PAR, (711x480 Active area)</li>
-<li>640:531 SAR/PAR, (708x480 Active area)</li>
-<li>40:33 SAR/PAR, (704x480 Active area)</li>
-</ul>
-    </div>
+<doc-anchor-target id="ntsc">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ntsc">#</doc-anchor-trigger>
+        <span>NTSC</span>
+    </h4>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Aspect Ratio</th>
+<th>SAR/PAR</th>
+<th>Active Area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4:3</td>
+<td>4320:4739</td>
+<td>710.85x486</td>
+</tr>
+<tr>
+<td></td>
+<td>640:711</td>
+<td>711x480</td>
+</tr>
+<tr>
+<td></td>
+<td>160:177</td>
+<td>708x480</td>
+</tr>
+<tr>
+<td></td>
+<td>10:11</td>
+<td>704x480</td>
+</tr>
+<tr>
+<td>16:9</td>
+<td>2560:2133</td>
+<td>711x480</td>
+</tr>
+<tr>
+<td></td>
+<td>640:531</td>
+<td>708x480</td>
+</tr>
+<tr>
+<td></td>
+<td>40:33</td>
+<td>704x480</td>
+</tr>
+</tbody>
+</table>
 </div>
-</doc-tab>
+<doc-tabs>
 <doc-tab v-cloak id="pal">
 <template #title>PAL</template>
 <p>todo</p>
