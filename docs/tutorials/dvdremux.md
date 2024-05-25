@@ -252,6 +252,12 @@ todo
 While this isn't a comprehensive list of existing standards, anything outside of this table is exceedingly rare.
 If the aspect ratio you determined does not fall under one of these, it is almost certainly **wrong**
 
+!!!
+Standards go out the window with NTSC -> PAL conversions,
+working with such DVDs should be done by correcting SAR/PAR of the NTSC source
+then figuring out the transform to make the PAL DVD match.
+!!!
+
 ==- 1. Faded column check
 
 We can the size of black/faded out columns on the image's border, as this can indicate the active area.
