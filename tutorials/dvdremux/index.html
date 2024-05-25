@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769976973624">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769977130563">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -21,23 +21,23 @@
     <meta property="og:url" content="https://thewiki.moe/tutorials/dvdremux/">
     <meta property="og:title" content="DVD Remuxing">
     <meta property="og:description" content="Remux DVDs using FFmpeg">
-    <meta property="og:image" content="https://github.com/guyman624/thewiki/assets/82007920/bee9d99b-c46d-41cf-afb8-546f53da6c89">
+    <meta property="og:image" content="https://thewiki.moe/static/tutorials/dvdremux/faded_column_check.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://thewiki.moe/tutorials/dvdremux/">
     <meta property="twitter:title" content="DVD Remuxing">
     <meta property="twitter:description" content="Remux DVDs using FFmpeg">
-    <meta property="twitter:image" content="https://github.com/guyman624/thewiki/assets/82007920/bee9d99b-c46d-41cf-afb8-546f53da6c89">
+    <meta property="twitter:image" content="https://thewiki.moe/static/tutorials/dvdremux/faded_column_check.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769976973624" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769977130563" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769976973624" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769977130563" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769976973624" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769976973624" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769977130563" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769977130563" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -527,7 +527,7 @@ then figuring out the transform to make the PAL DVD match.</p>
 <p>We can the size of black/faded out columns on the image&#x27;s border,
 as this can indicate the active area.</p>
 <p><figure class="content-center">
-    <img src="https://github.com/guyman624/thewiki/assets/82007920/bee9d99b-c46d-41cf-afb8-546f53da6c89" alt="NHK ni Youkoso! 01">
+    <img src="../../static/tutorials/dvdremux/faded_column_check.png" alt="NHK ni Youkoso! 01">
     <figcaption class="caption">NHK ni Youkoso! 01</figcaption>
 </figure>
 Here we have a frame from a DVD.
@@ -573,7 +573,7 @@ You find an object that you believe is meant to be a perfect circle
 and compare different known SAR/PAR standards to a perfect circle
 that you&#x27;ve overlaid in an image editor.</p>
 <p><figure class="content-center">
-    <img src="https://github.com/guyman624/thewiki/assets/82007920/a4d51b7e-b38f-4308-9a8c-30a80889d2f9" alt="Perfect circle overlaid onto a frame">
+    <img src="../../static/tutorials/dvdremux/circle_check.png" alt="Perfect circle overlaid onto a frame">
     <figcaption class="caption">Perfect circle overlaid onto a frame</figcaption>
 </figure>
 </p>
@@ -587,7 +587,7 @@ against a ground truth
 <p>More or less the same thing as the circle method,
 but we use a studio logo instead.</p>
 <p><figure class="content-center">
-    <img src="https://github.com/guyman624/thewiki/assets/82007920/f433ef74-1a15-4216-9c0c-d6100ee1df3a" alt="Logo from Google overlaid ontop of the OP credits">
+    <img src="../../static/tutorials/dvdremux/text_logo_check.png" alt="Logo from Google overlaid ontop of the OP credits">
     <figcaption class="caption">Logo from Google overlaid ontop of the OP credits</figcaption>
 </figure>
 </p>
