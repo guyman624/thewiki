@@ -215,8 +215,9 @@ and we need to fix this for a remux.
 ### Heuristics to identify SAR/PAR
 
 Figuring out the correct SAR/PAR
-to correct for this issue is not an exact science.
-Over the years there have been many different standards formed,
+to correct for this issue
+is not an exact science.
+Over the years many different standards have been formed,
 and figuring out which your DVD uses
 is not an intuitive process.
 The methods below will be most helpful for this process.
