@@ -229,6 +229,29 @@ and figuring out which your DVD uses
 is not an intuitive process.
 The methods below will be most helpful for this process.
 
+Heres a table of the most common standards you'll see on DVDs:
++++ NTSC
+
+||| 4:3
+- 4320:4739 SAR/PAR, (710.85x486 Active area)
+- 640:711 SAR/PAR, (711x480 Active area)
+- 160:177 SAR/PAR, (708x480 Active area)
+- 10:11 SAR/PAR, (704x480 Active area)
+||| 16:9
+- 2560:2133 SAR/PAR, (711x480 Active area)
+- 640:531 SAR/PAR, (708x480 Active area)
+- 40:33 SAR/PAR, (704x480 Active area)
+|||
+
++++ PAL
+
+todo
+
++++
+
+While this isn't a comprehensive list of existing standards, anything outside of this table is exceedingly rare.
+If the aspect ratio you determined does not fall under one of these, it is almost certainly **wrong**
+
 ==- 1. Faded column check
 
 We can the size of black/faded out columns on the image's border, as this can indicate the active area.
@@ -335,7 +358,7 @@ Once we've obtained these new display dimensions,
 we can edit the mkv with the following terminal command:
 
 ```shell
-mkvpropedit test.mkv --edit track:v1 --set display-width=864 --set display-height=480
+mkvpropedit <filename>.mkv --edit track:v1 --set display-width=864 --set display-height=480
 ```
 
 Replace `display-width` and `display-height` with the values you obtained.
