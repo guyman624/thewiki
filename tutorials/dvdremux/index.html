@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769977130563">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769979121415">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769977130563" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769979121415" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769977130563" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769979121415" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769977130563" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769977130563" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769979121415" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769979121415" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -449,7 +449,7 @@ The methods below will be most helpful for this process.</p>
 <table class="comfortable">
 <thead>
 <tr>
-<th>Aspect Ratio</th>
+<th>DAR</th>
 <th>SAR/PAR</th>
 <th>Active Area</th>
 </tr>
@@ -516,9 +516,9 @@ it is almost certainly <strong>wrong</strong>.</p>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Standards go out the window with NTSC -&gt; PAL conversions,
-working with such DVDs should be done by correcting SAR/PAR of the NTSC source
-then figuring out the transform to make the PAL DVD match.</p>
+<p>Standards go out the window with NTSC -&gt; PAL or vice-versa conversions,
+working with such DVDs should be done by correcting SAR/PAR of the original format source
+then figuring out the transform to make the foreign DVD match.</p>
         </div>
     </div>
 </div>
@@ -612,7 +612,7 @@ refer to this Vapoursynth code snippet:</p>
 <pre class="language-python"><code v-pre class="language-python">from vstools import Sar, mod2
 from vskernels import Bicubic
 
-new_sar = Sar.from_ar(16, 9, 711, 480)
+new_sar = Sar.from_ar(&lt;dar_num&gt;, &lt;dar_den&gt;, &lt;active_width&gt;, &lt;active_height&gt;)
 
 if new_sar &gt; 1:
     width, height = clip.width * float(new_sar), clip.height
@@ -621,9 +621,13 @@ elif new_sar &lt; 1:
 
 clip_resized = Bicubic.scale(clip, mod2(width), mod2(height), keep_ar=True, sar=new_sar)</code></pre>
 </doc-codeblock></div>
-<p>In this example,
-we have a 16:9 DVD with an active area of 711x480.
-These values should be replaced to fit your use-case.</p>
+<p>Replace:</p>
+<ul>
+<li>&lt;dar_num&gt; with the DVD&#x27;s DAR numerator.</li>
+<li>&lt;dar_den&gt; with the DVD&#x27;s DAR denominator.</li>
+<li>&lt;active_width&gt; with the SAR/PAR standard&#x27;s active width.</li>
+<li>&lt;active_height&gt; with the SAR/PAR standard&#x27;s active height.</li>
+</ul>
 <p>Once you&#x27;ve determined the correct SAR/PAR,
 we can print out the new display dimensions
 to use with mkvpropedit like so:</p>
@@ -639,19 +643,31 @@ to use with mkvpropedit like so:</p>
 <p>Once we&#x27;ve obtained these new display dimensions,
 we can edit the mkv with the following terminal command:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">mkvpropedit &lt;filename&gt;.mkv --edit track:v1 --set display-width=864 --set display-height=480</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">mkvpropedit &lt;filename&gt;.mkv --edit track:v1 --set display-width=&lt;display_width&gt; --set display-height=&lt;display_height&gt;</code></pre>
 </doc-codeblock></div>
-<p>Replace <code v-pre>display-width</code> and <code v-pre>display-height</code> with the values you obtained.</p>
+<p>Replace:</p>
+<ul>
+<li>&lt;filename&gt; with the filename of your remuxed mkv.</li>
+<li>&lt;display_width&gt; with the new display width value you obtained.</li>
+<li>&lt;display_height&gt; with the new display height value you obtained.</li>
+</ul>
 <p>This command is incomplete, however.
 In order for fully correct playback
 we need to set additional cropping flags
 so the video is cropped to it&#x27;s respective active area.
 This can be done by adding the following to the above command:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">--set pixel-crop-left=5 --set pixel-crop-right=4</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">--set pixel-crop-left=&lt;crop_left&gt; --set pixel-crop-right=&lt;crop_right&gt;</code></pre>
 </doc-codeblock></div>
-<p>Again, replace these values with what fits your source.
-This example is for a 711 active area, so we crop to 711 pixels.</p>
+<p>Replace:</p>
+<ul>
+<li>&lt;crop_left&gt; with the necessary left crop (in number of pixels).</li>
+<li>&lt;crop_right&gt; with the necessary right crop (in number of pixels).</li>
+</ul>
+<p>The crop values here should crop the original 720 width
+to the active area of the SAR/PAR standard you are applying.
+If your active width is odd, one of the borders will have
+more black/faded columns.</p>
 <p>If your disc has black borders on the top or bottom,
 you should additionally set the top/bottom pixel crop flags.</p>
 <p>Below is an example of a complete command:</p>
