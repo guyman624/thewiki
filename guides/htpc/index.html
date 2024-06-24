@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.772506098910">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.772573042867">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.772506098910" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.772573042867" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.772506098910" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.772573042867" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.772506098910" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.772506098910" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.772573042867" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.772573042867" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -241,10 +241,10 @@
 <p>Once you have picked a machine, you can move onto picking a GPU. We recommend choosing relatively recent, low-powered graphics cards as this will allow you to handle most modern shows without issue. Some examples of popular budget cards are:</p>
 <ul>
 <li>AMD Radeon RX 550</li>
-<li>NVIDIA GT 1030 (GDDR5) <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<li>NVIDIA GT 1030 (GDDR5)</li>
+<li>NVIDIA Quadro P1000 <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
     <span>Preferred for 4K/HDR</span>
-</span></li>
-<li>NVIDIA Quadro P600 <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>Mini DP to HDMI adapter required</span>
 </span></li>
 </ul>
@@ -320,6 +320,11 @@
 <p>This is an example of a good option to choose for your HTPC. As shown, this machine includes a capable CPU, decent amount of RAM preinstalled, and an SSD. This is an ideal candidate if size is a concern.</p>
    </doc-panel>
 </doc-panels>
+<p>Whether your system has an iGPU or a dGPU, you may run into limitations with their I/O. Most office equipment such as Quadro GPUs and ThinkCentre PCs will omit HDMI. In these cases, you will need an <strong>active</strong> DisplayPort to HDMI adapter. Improper adapters may be limited to 4K 30Hz or not support HDR. The following adapters have been verified to support 4K 60Hz with HDR, however any adapter labeled as such should work.</p>
+<ul>
+<li><a href="https://www.amazon.com/DisplayPort-Adapter-Compatible-Microsoft-Projector/dp/B07JDWR6W9">Amazon Basics DisplayPort (4k@60Hz) to HDMI Female Converter</a></li>
+<li><a href="https://www.amazon.com/DisplayPort-Adapter-Compatible-Microsoft-Projector/dp/B07ZNH35M5">BENFEI Mini DisplayPort to HDMI, 4K@60Hz Active Mini DP to HDMI Adapter</a></li>
+</ul>
 <doc-anchor-target id="operating-system">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#operating-system">#</doc-anchor-trigger>
@@ -416,8 +421,7 @@
 ontop=yes
 profile=high-quality
 blend-subtitles=video
-#If you aren't using the DRC Filter, you can change this to auto-safe for better performance.
-hwdec=auto-copy
+hwdec=auto-copy #If you aren't using the DRC Filter, you can change this to auto-safe for better performance.
 gpu-api=vulkan
 target-colorspace-hint=yes
 
