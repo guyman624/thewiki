@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.772294201056">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.772505168583">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.772294201056" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.772505168583" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.772294201056" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.772505168583" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.772294201056" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.772294201056" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.772505168583" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.772505168583" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -784,7 +784,19 @@ return</code></pre>
 <doc-panels>
    <doc-panel id="flirc" collapsed>
        <template #title>FLIRC</template>
-<p>Download the FLIRC Software from <a href="https://flirc.tv/products/flirc-usb-receiver?variant=43513067569384#spec2">here</a></p>
+<p>There are two different revisions of the FLIRC dongle. The first generation is in a clear plastic shell, and is no longer supported by FLIRC, however the latest software still is fully functional. The second generation is in a metal and plastic shell. It has the latest firmware updates, and also includes an IR transmitter. This transmitter is only functional through the CLI however, it is not implemented into the GUI. (<a href="https://forum.flirc.tv/index.php?/topic/3980-transmit-ir-signal-on-gen-2/">source</a>)</p>
+<p>Download the FLIRC Software from <a href="https://flirc.tv/products/flirc-usb-receiver?variant=43513067569384#spec2">here</a>. The configuration is stored on the dongle itself, so you can configure on one computer then move to the HTPC without the need for the software on both.</p>
+<p>The basic usage of the software is as follows:</p>
+<ol>
+<li>Connect the dongle to the PC running the FLIRC software</li>
+<li>Select the type of controller you want to emulate from the Controllers tab. (You can select different buttons from multiple controllers)</li>
+<li>Click the button you would like to bind, then point the remote at the dongle and press the button.</li>
+</ol>
+<p>Although the most complete retail product, the FLIRC software is far from perfect. In my experience there are two quirks that you should know to take full advantage of the device.</p>
+<ul>
+<li>The &quot;erase&quot; button at the bottom seems to be non functional. This means that if you make a mistake, you need to go to File &gt; Clear Configuration, <strong>restart the software</strong>, then start over.</li>
+<li>Different buttons with similar meanings on different tabs will do different things. For example, the &quot;Wake&quot; button on the &quot;Full Keyboard&quot; tab will <strong>only</strong> wake the computer, where as the power button under &quot;Media Keys&quot; is both a sleep and wake button.</li>
+</ul>
    </doc-panel>
    <doc-panel id="mce-ir" collapsed>
        <template #title>MCE IR</template>
