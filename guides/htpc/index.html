@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.772505168583">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.772506098910">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.772505168583" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.772506098910" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.772505168583" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.772506098910" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.772505168583" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.772505168583" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.772506098910" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.772506098910" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -775,6 +775,65 @@ return</code></pre>
 <p>The FLIRC is the most complete retail product, however all three can be made to work in most setups. However, all three will need a remote to interface with.</p>
 <p>Most low end TVs will be using an IR Remote. If there are buttons on the remote that don’t accidentally trigger other functions on the TV, these buttons can be programmed with your receiver. Some higher end remotes, such as the LG Magic Remote can be programmed as an IR Remote for devices like a Cable Box or DVD/BD player. You can take advantage of this feature to have the remote send IR signals that the TV knows are not directed at it. If you don’t have these features on your remote, there are alternative solutions as well. In the case of the MCE Receiver, there is an official remote that was meant to be used with it. You can also reuse any remote that you already have from an old or broken TV.</p>
 <p>A more advanced solution would be a programmable universal remote like the Logitech Harmony or FLIRC Skip 1s. These devices have features like turning on and setting inputs on all devices with one button. The Harmony ecosystem was abandoned by Logitech, however the remotes can be found for very cheap on the used market. The FLIRC Skip 1s is a similar product that is still being manufactured, and doesn’t require a cloud service to be programmed like the Harmony.</p>
+<doc-anchor-target id="universal-remotes">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#universal-remotes">#</doc-anchor-trigger>
+        <span>Universal Remotes</span>
+    </h4>
+</doc-anchor-target>
+<doc-panels>
+   <doc-panel id="lg-magic-remote" collapsed>
+       <template #title>LG Magic Remote</template>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>LG Magic Remotes can ONLY be used with an LG TV. They cannot be used with other TVs.</p>
+        </div>
+    </div>
+</div>
+<p>The LG Magic Remote does not communicate with the TV via IR (except for the power button), however it is capable of emulating IR remotes. Although they do not have any HTPC specific IR codes, we can reuse the IR codes for a Cable Box.</p>
+<ol>
+<li>Open the full settings menu on your TV, and go to General &gt; External Devices &gt; Universal Control Settings.</li>
+<li>Select the HDMI Input that corresponds with your HTPC. In my case, it is HDMI 1. If there are any settings stored there, delete them.</li>
+<li>Select Set-Top Box. The other options (BD/DVD, Home Theater, OTT) are missing some buttons, like CH+/CH-.</li>
+<li>Select any of the service providers in your area. If you have a cable box, pick another brand to avoid confliction.</li>
+<li>During the self test, you can answer &quot;Yes&quot; to all the questions. These buttons will do nothing until you have configured them in your IR blaster.</li>
+</ol>
+<p>Your Magic Remote will now emit IR codes as long as the TV is on, and the input is set to the HTPC. Make sure that both of these things are true when trying to configure your IR Reciever, otherwise the remote will not emit any IR.</p>
+<p>When binding sleep/wake, you can use the ellipsis button to find the power button. This will allow you to turn the PC on when the TV detects no signal.
+<img src="https://github.com/guyman624/thewiki/assets/82007920/b6500aaf-229c-43e6-af28-8a627cd060b6" width="150"></p>
+   </doc-panel>
+   <doc-panel id="logitech-harmony" collapsed>
+       <template #title>Logitech Harmony</template>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Logitech has discontinued all Harmony products and has stopped supporting the software. The software relies on a cloud service to function, and if this cloud service were to go down, you would be rendered unable to change your remote configuration. At the time of writing this guide, ALL Harmony products are still fully functional and have no shutdown date from Logitech</p>
+        </div>
+    </div>
+</div>
+<p>There are three applications for the Harmony system depending on what generation of remote you have. If you have the Harmony Hub, you need the Harmony app. The other remotes either use the MyHarmony or the Harmony 7.x software. You can see the full compatibility list <a href="https://support.myharmony.com/en-us/download#legacy">here</a>.</p>
+<p>If you are using a remote that relies on the Harmony 7.x software, you may need to alter the model number to something from the same time frame as the software. For example, the LG 42C2 is not in the Harmony 7.x database, but the codes for the LG 32LC7D are fully cross compatible. If you cannot find a cross compatible device, the Harmony is capable of &quot;learning&quot; IR codes from the original remote.</p>
+   </doc-panel>
+</doc-panels>
 <doc-anchor-target id="recievers">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#recievers">#</doc-anchor-trigger>
@@ -810,7 +869,8 @@ If you have an original remote, or supported universal remote, you can use <a hr
 <li>At the top of the window, click the &quot;Add Macro...&quot; button, but close the configuration window. You should have an &quot;&lt;unnamed macro&gt;&quot;. Make one for each button you would like to bind. You should rename it to the appropriate action.</li>
 <li>Press the button you would like to bind. It should show on the left side of the EventGhost window.
 <ul>
-<li><img src="https://github.com/guyman624/thewiki/assets/82007920/9305a0ac-2e4e-4b4a-a04d-bc5bccfc7e0c" alt="image" /></li>
+<li><img src="https://github.com/guyman624/thewiki/assets/82007920/9305a0ac-2e4e-4b4a-a04d-bc5bccfc7e0c" width="100">
+</li>
 </ul>
 </li>
 <li>Drag this element to the macro you would like it to activate.</li>
@@ -821,33 +881,6 @@ If you have an original remote, or supported universal remote, you can use <a hr
 <p>Once you have configured all the keys, as long as EventGhost is running, the keystrokes should be sent. You may wish to add EventGhost to the startup folder as detailed in the <doc-anchor-trigger to="#cec">CEC</doc-anchor-trigger> section.</p>
    </doc-panel>
 </doc-panels>
-<doc-anchor-target id="universal-remotes">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#universal-remotes">#</doc-anchor-trigger>
-        <span>Universal Remotes</span>
-    </h4>
-</doc-anchor-target>
-<doc-panel id="logitech-harmony" collapsed>
-    <template #title>Logitech Harmony</template>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>Logitech has discontinued all Harmony products and has stopped supporting the software. The software relies on a cloud service to function, and if this cloud service were to go down, you would be rendered unable to change your remote configuration. At the time of writing this guide, ALL Harmony products are still fully functional and have no shutdown date from Logitech</p>
-        </div>
-    </div>
-</div>
-<p>There are three applications for the Harmony system depending on what generation of remote you have. If you have the Harmony Hub, you need the Harmony app. The other remotes either use the MyHarmony or the Harmony 7.x software. You can see the full compatibility list <a href="https://support.myharmony.com/en-us/download#legacy">here</a>.</p>
-<p>If you are using a remote that relies on the Harmony 7.x software, you may need to alter the model number to something from the same time frame as the software. For example, the LG 42C2 is not in the Harmony 7.x database, but the codes for the LG 32LC7D are fully cross compatible. If you cannot find a cross compatible device, the Harmony is capable of &quot;learning&quot; IR codes from the original remote.</p>
-</doc-panel>
 
                                 
                                 <!-- Required only on API pages -->
