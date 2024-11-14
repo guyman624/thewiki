@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.784821776146">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.784913039029">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.784821776146" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.784913039029" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.784821776146" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.784913039029" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.784821776146" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.784821776146" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.784913039029" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.784913039029" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -385,7 +385,8 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>HDR is not supported in X11 and Wayland. If you plan on playing HDR content, you will need to use Kodi&#x27;s built-in player.</p>
+<p>HDR is not supported in X11. Wayland has experimental support for HDR, but it requires some configuration to work with MPV.
+If you plan on playing HDR content, you will probably need to use Kodi&#x27;s built-in player.</p>
         </div>
     </div>
 </div>
@@ -830,8 +831,31 @@ return</code></pre>
         </div>
     </div>
 </div>
+<p>Pros:</p>
+<ul>
+<li>Large community</li>
+<li>Fairly cheap on the used market</li>
+<li>Beginner friendly programming
+Cons:</li>
+<li>No offical support</li>
+<li>Reliant on online programming</li>
+</ul>
 <p>There are three applications for the Harmony system depending on what generation of remote you have. If you have the Harmony Hub, you need the Harmony app. The other remotes either use the MyHarmony or the Harmony 7.x software. You can see the full compatibility list <a href="https://support.myharmony.com/en-us/download#legacy">here</a>.</p>
-<p>If you are using a remote that relies on the Harmony 7.x software, you may need to alter the model number to something from the same time frame as the software. For example, the LG 42C2 is not in the Harmony 7.x database, but the codes for the LG 32LC7D are fully cross compatible. If you cannot find a cross compatible device, the Harmony is capable of &quot;learning&quot; IR codes from the original remote.</p>
+   </doc-panel>
+   <doc-panel id="flirc-skip-1s" collapsed>
+       <template #title>FLIRC Skip 1S</template>
+<p>The FLIRC Skip 1S is a universal remote developed after the discontinuation of the Logitech Harmony. It was designed in such a way that in the event that FLIRC were to go out of business, the remotes will still be fully functional and programmable.</p>
+<p>Pros:</p>
+<ul>
+<li>Fully offline operation</li>
+<li>Relatively cheap brand new</li>
+<li>IR learning
+Cons:</li>
+<li>Programming software is very buggy</li>
+<li>Not &quot;Scene Smart&quot; in the way that the Harmony is</li>
+<li>Difficult to make custom bindings with FLIRC Reciever</li>
+</ul>
+<p>The <a href="https://flirc.tv/products/skip1s-remote-universal-remote-control?variant=43489094729960#spec2">Skip 1S</a> product page has the downloads for the latest &quot;stable&quot; release, but the <a href="https://forum.flirc.tv/index.php?/forum/102-beta-feedback/">forums</a> usually have the latest beta. The program has some profiles for use with the FLIRC Reciever and Kodi, however there is not any simple/obvious way to add a custom keybinding. The simplest way I found was to add a &quot;fake&quot; cable box, add it&#x27;s bindings to my remote, then on the reciever software bind these &quot;fake&quot; codes to the keys I needed.</p>
    </doc-panel>
 </doc-panels>
 <doc-anchor-target id="recievers">
@@ -853,7 +877,7 @@ return</code></pre>
 </ol>
 <p>Although the most complete retail product, the FLIRC software is far from perfect. In my experience there are two quirks that you should know to take full advantage of the device.</p>
 <ul>
-<li>The &quot;erase&quot; button at the bottom seems to be non functional. This means that if you make a mistake, you need to go to File &gt; Clear Configuration, <strong>restart the software</strong>, then start over.</li>
+<li>The &quot;erase&quot; button at the bottom is unintuitive. If you want to remove a binding, click &quot;erase&quot;, then press the button to clear on the remote, not on the screen/keyboard.</li>
 <li>Different buttons with similar meanings on different tabs will do different things. For example, the &quot;Wake&quot; button on the &quot;Full Keyboard&quot; tab will <strong>only</strong> wake the computer, where as the power button under &quot;Media Keys&quot; is both a sleep and wake button.</li>
 </ul>
    </doc-panel>
