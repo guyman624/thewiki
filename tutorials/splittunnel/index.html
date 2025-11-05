@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.815678851641">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.815679109795">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.815678851641" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.815679109795" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.815678851641" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.815679109795" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.815678851641" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.815679109795" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -193,8 +193,8 @@
 <li>Click the settings icon around the bottom right corner.</li>
 <li>In settings, enable <code v-pre>Virtual Adapter Mode</code> and click restart <img src="https://github.com/user-attachments/assets/8328d7de-fbf4-472c-b8e9-f425ac368636" alt="image" /></li>
 <li>Now click Import Configuration.</li>
-<li>Select your configuration and click Edit at the top right of the window</li>
-<li>Scroll down until you see &quot;Tunneled Applications&quot; and type the exe name of the program you would like to be inside the VPN. Clicking the Windows icon will bring up a menu with all currently running programs. <img src="https://github.com/user-attachments/assets/8fa47af1-788f-4a78-912e-0b0e6c3abb0f" alt="image" /></li>
+<li>Select your configuration and click <code v-pre>Edit</code> at the top right of the window</li>
+<li>Scroll down until you see <code v-pre>Tunneled Applications</code> and type the exe name of the program you would like to be inside the VPN. Clicking the Windows icon will bring up a menu with all currently running programs. <img src="https://github.com/user-attachments/assets/8fa47af1-788f-4a78-912e-0b0e6c3abb0f" alt="image" /></li>
 <li>Save, close the configuration window and enable the VPN.</li>
 </ol>
 <p>At this point, you should be torrenting through the VPN as long as Wiresock Secure Connect is running and Activated. However, you may be concered about accidentally disabling the VPN while a torrent is running. To fix this, we can change a setting in qBittorrent.</p>
@@ -202,7 +202,7 @@
 <li>Open qBittorrent settings</li>
 <li>On the left hand bar, click Advanced</li>
 <li>Look for <code v-pre>Network Interface</code>. The default setting is <code v-pre>Any Interface</code></li>
-<li>Expand the drop down. If you are lucky, the correct interface will be <code v-pre>WireSock Virtual Adapter</code>. If you don&#x27;t see this, continue on. Otherwise, skip to step 8.</li>
+<li>Expand the drop down. If you are lucky, the correct interface will be <code v-pre>WireSock Virtual Adapter</code> or the same as your .conf file. If you don&#x27;t see this, continue on. Otherwise, skip to step 8.</li>
 <li>Press Windows + R key together. Paste in <code v-pre>ncpa.cpl</code></li>
 <li>In the window that shows up, you should see all your network adapters, including virtual ones. Find the one that says <code v-pre>WireSock Virtual Adapter</code> on the third line. Write down it&#x27;s name, or rename it to WireSock
 <img src="https://github.com/guyman624/thewiki/assets/82007920/f17e1c3c-1ca8-4d3d-b98b-edce36b5b6da" alt="image" /></li>
