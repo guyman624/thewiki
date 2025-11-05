@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800862226782">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.815677863629">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.8.1">
+    <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
     <title>Muxing</title>
@@ -30,39 +30,39 @@
     <meta property="twitter:description" content="Muxing files with MKVToolNix">
     <meta property="twitter:image" content="https://thewiki.moe/static/advanced/muxing/muxingembed.gif">
 
-    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.8.1.800862226782" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.815677863629" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.800862226782" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.800862226782" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.8.1.800862226782" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.815677863629" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.815677863629" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.815677863629" defer></script>
 </head>
 <body>
-    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
-        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
     
-        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
             <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
                 <!-- Mobile menu button skeleton -->
-                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-                <div v-cloak id="docs-sidebar-toggle"></div>
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
         
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-2xl">
                             <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">The Wiki</span>
                         </a>
                     </div>
         
-                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
                 </div>
         
                 <div class="flex justify-between md:grow">
                     <!-- Top Nav -->
-                    <nav class="hidden md:flex">
+                    <nav id="retype-header-nav" class="hidden md:flex">
                         <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                             
                         </ul>
@@ -76,7 +76,7 @@
                             <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
                             </div>
-                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
                         </div>
         
                         <!-- Mobile search button -->
@@ -94,7 +94,7 @@
                     </div>
         
                     <div v-cloak class="flex justify-end grow">
-                        <div id="docs-mobile-search-button"></div>
+                        <div id="retype-mobile-search-button"></div>
                         <doc-search-desktop></doc-search-desktop>
         
                         <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
@@ -104,25 +104,26 @@
             </div>
         </header>
     
-        <div class="container relative flex bg-white">
+    
+        <div id="retype-container" class="container relative flex bg-white">
             <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-white border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
             
                 <div class="flex items-center h-16 px-6">
-                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
                 </div>
             
                 <div class="pl-6 mt-1 mb-4">
-                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
                 </div>
             
-                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
-                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                         <span class="text-xs whitespace-nowrap">Powered by</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                     </a>
@@ -132,9 +133,9 @@
             <!-- Sidebar component -->
             <doc-sidebar v-cloak>
                 <template #sidebar-footer>
-                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
             
-                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                             <span class="text-xs whitespace-nowrap">Powered by</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                         </a>
@@ -142,14 +143,14 @@
                 </template>
             </doc-sidebar>
     
-            <div class="grow min-w-0 dark:bg-dark-850">
+            <div class="grow min-w-0 bg-body-bg">
                 <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
                 <div class="flex">
-                    <div class="min-w-0 p-4 grow md:px-16">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
                         <main class="relative pb-12 lg:pt-2">
-                            <div class="docs-markdown" id="docs-content">
+                            <div class="retype-markdown" id="retype-content">
                                 <!-- Rendered if sidebar right is enabled -->
-                                <div id="docs-sidebar-right-toggle"></div>
+                                <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
 <doc-anchor-target id="muxing" class="break-words">
     <h1>
@@ -192,7 +193,7 @@ You&#x27;ll see 3 tabs here:</p>
 <p><a href="../../static/advanced/muxing/mkvtoolnix.png"><img src="../../static/advanced/muxing/mkvtoolnix.png" alt="" /></a></p>
 </doc-panel>
 </li>
-<li><p>When you first add a file in MKVToolNix, you&#x27;ll get a pop to select it&#x27;s behavior.</p>
+<li><p>When you first add a file in MKVToolNix, you&#x27;ll get a popup to select its behavior.</p>
 <ul>
 <li>Select <code v-pre>Add as new source files to the current multiplex settings</code></li>
 <li>Check <code v-pre>Always use the action selected above and don't ask again</code></li>
@@ -222,10 +223,10 @@ You&#x27;ll see 3 tabs here:</p>
 <p><a href="../../static/advanced/muxing/mkvtoolnix3.png"><img src="../../static/advanced/muxing/mkvtoolnix3.png" alt="" /></a></p>
 </doc-panel>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -240,59 +241,354 @@ You&#x27;ll see 3 tabs here:</p>
 </div>
 </li>
 </ol>
+<doc-anchor-target id="default-track-selection">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#default-track-selection">#</doc-anchor-trigger>
+        <span>Default Track Selection</span>
+    </h3>
+</doc-anchor-target>
+<p>When muxing releases, you&#x27;ll want to make sure you understand how the default track selection works.
+These examples are given to help you understand this as defined by the <a href="https://www.matroska.org/technical/notes.html#default-track-selection">Matroska spec</a>,
+and is modified to reflect anime release conventions, and may not reflect all possible cases.</p>
+<doc-panels>
+   <doc-panel id="audio-selection" collapsed>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M11.553 3.064A.75.75 0 0 1 12 3.75v16.5a.75.75 0 0 1-1.255.555L5.46 16H2.75A1.75 1.75 0 0 1 1 14.25v-4.5C1 8.784 1.784 8 2.75 8h2.71l5.285-4.805a.752.752 0 0 1 .808-.13ZM10.5 5.445l-4.245 3.86a.748.748 0 0 1-.505.195h-3a.25.25 0 0 0-.25.25v4.5c0 .138.112.25.25.25h3c.187 0 .367.069.505.195l4.245 3.86Zm8.218-1.223a.75.75 0 0 1 1.06 0c4.296 4.296 4.296 11.26 0 15.556a.75.75 0 0 1-1.06-1.06 9.5 9.5 0 0 0 0-13.436.75.75 0 0 1 0-1.06Z"/><path d="M16.243 7.757a.75.75 0 1 0-1.061 1.061 4.5 4.5 0 0 1 0 6.364.75.75 0 0 0 1.06 1.06 6 6 0 0 0 0-8.485Z"/></g></g></svg> Audio Selection</template>
+<p>Example track set:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>No.</th>
+<th>Track Type</th>
+<th>Language</th>
+<th>Name</th>
+<th>Original</th>
+<th>Default</th>
+<th>Other Flags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Video</td>
+<td>und</td>
+<td>Group Tag</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Audio</td>
+<td>jpn</td>
+<td>FLAC 5.1</td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>None</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Audio</td>
+<td>jpn</td>
+<td>FLAC 2.0</td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>None</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Audio</td>
+<td>jpn</td>
+<td>FLAC 2.0 - Commentary</td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td>Commentary</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Audio</td>
+<td>eng</td>
+<td>FLAC 5.1</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>None</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Audio</td>
+<td>eng</td>
+<td>FLAC 2.0</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>None</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Audio</td>
+<td>eng</td>
+<td>FLAC 2.0 - Descriptive</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td>Visual-impaired</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This is a file that has 6 audio tracks,
+3 of which are Japanese (which is tagged as the original language) and 3 of which are English.</p>
+<p>If the player supports it and the user has specified it as a preference,
+the player will automatically select one of the audio tracks that are tagged as the original language.</p>
+<p>If the player has support for automatically selecting visual-impaired audio tracks
+and the user has set a preference for it, it will select the track that matches that preference
+if it matches the language preference of the user as well.</p>
+<p>If no tracks are automatically selected based on the above rules,
+it will look at the remaining tracks tagged as <code v-pre>Default</code>.
+In this example, that would be the 2nd, 3rd, 5th, and 6th tracks.
+The only differences between these tracks are the language and the channel layout.
+If the user has a channel layout preference, it will select the first track of the group that matches that preference.
+Finally, if no other preferences are set or match the existing tracks, it will select the first track in this group.</p>
+   </doc-panel>
+   <doc-panel id="subtitle-selection" collapsed>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M9.197 10a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm-2.382 4a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm-1.581 4a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Z"/><path d="M4.125 0h15.75a4.11 4.11 0 0 1 2.92 1.205A4.11 4.11 0 0 1 24 4.125c0 1.384-.476 2.794-1.128 4.16-.652 1.365-1.515 2.757-2.352 4.104l-.008.013c-.849 1.368-1.669 2.691-2.28 3.97-.614 1.283-.982 2.45-.982 3.503a2.625 2.625 0 1 0 4.083-2.183.75.75 0 1 1 .834-1.247A4.126 4.126 0 0 1 19.875 24H4.5a4.125 4.125 0 0 1-4.125-4.125c0-2.234 1.258-4.656 2.59-6.902.348-.586.702-1.162 1.05-1.728.8-1.304 1.567-2.553 2.144-3.738H3.39c-.823 0-1.886-.193-2.567-1.035A3.647 3.647 0 0 1 0 4.125 4.125 4.125 0 0 1 4.125 0ZM15.75 19.875c0-1.38.476-2.786 1.128-4.15.649-1.358 1.509-2.743 2.343-4.086l.017-.028c.849-1.367 1.669-2.692 2.28-3.972.614-1.285.982-2.457.982-3.514A2.615 2.615 0 0 0 19.875 1.5a2.625 2.625 0 0 0-2.625 2.625c0 .865.421 1.509 1.167 2.009A.75.75 0 0 1 18 7.507H7.812c-.65 1.483-1.624 3.069-2.577 4.619-.334.544-.666 1.083-.98 1.612-1.355 2.287-2.38 4.371-2.38 6.137A2.625 2.625 0 0 0 4.5 22.5h12.193a4.108 4.108 0 0 1-.943-2.625ZM1.5 4.125c-.01.511.163 1.008.487 1.403.254.313.74.479 1.402.479h12.86a3.648 3.648 0 0 1-.499-1.882 4.11 4.11 0 0 1 .943-2.625H4.125A2.625 2.625 0 0 0 1.5 4.125Z"/></g></g></svg> Subtitle Selection</template>
+<p>Example track set:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>No.</th>
+<th>Track Type</th>
+<th>Language</th>
+<th>Name</th>
+<th>Original</th>
+<th>Default</th>
+<th>Forced</th>
+<th>Other Flags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Video</td>
+<td>und</td>
+<td>Group Tag</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Audio</td>
+<td>jpn</td>
+<td>FLAC 2.0</td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Audio</td>
+<td>eng</td>
+<td>FLAC 5.1</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Subtitle</td>
+<td>eng</td>
+<td>Full Subtitles [Fansub]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td>None</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Subtitle</td>
+<td>eng</td>
+<td>Signs &amp; Songs [Fansub]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>None</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Subtitle</td>
+<td>eng</td>
+<td>SDH [USABD]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td>Hearing-impaired</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Subtitle</td>
+<td>eng</td>
+<td>English Commentary [USABD]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td>Commentary</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Subtitle</td>
+<td>jpn</td>
+<td>Closed Captions [Netflix]</td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td>Hearing-impaired</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Subtitle</td>
+<td>de</td>
+<td>Full Subtitles [Fansub]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td>None</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Subtitle</td>
+<td>de</td>
+<td>Signs &amp; Songs [Fansub]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Here is a file that has 2 audio tracks and 7 subtitle tracks for 3 different languages.
+The original language is Japanese, and the release includes an English dub track.</p>
+<p>If the player supports it and the user has specified it as a preference,
+the player will automatically select the audio track tagged as the original language.
+In this example, that would be the Japanese audio track.</p>
+<p><strong>Japanese/Original Language Audio</strong>:</p>
+<p>If the user has no preferences set for subtitle tracks,
+the player is not required to select a subtitle track.
+However, some players may still automatically select a subtitle track
+based on the rules outlined below.</p>
+<p>If the user has set preferences for both original language subtitles and hearing-impaired tracks,
+the player will select the Japanese closed captions track (track 8),
+since it&#x27;s tagged as both the original language and as hearing-impaired.
+Even if the track weren&#x27;t explicitly tagged as the original language,
+the player should assume it matches the original language
+since it&#x27;s the same language as the audio track.</p>
+<p>Since there are no Japanese subtitle tracks tagged as <code v-pre>Forced</code>,
+the only remaining tracks eligible for auto-selection
+are the full English (track 4) and German (track 9) subtitle tracks.
+The player will select based on the user&#x27;s language preference:</p>
+<ul>
+<li>English subtitles preferred -&gt; selects the English track</li>
+<li>German subtitles preferred -&gt; selects the German track</li>
+<li>No language preference -&gt; selects the first track in the group (English track)</li>
+</ul>
+<p><strong>Dub Audio</strong>:</p>
+<p>When the player auto-selects the English dub audio track,
+it will also automatically select the English forced subtitle track (Signs &amp; Songs),
+since it&#x27;s tagged as <code v-pre>Forced</code> and matches the audio language.</p>
+<p>However, if the user has set preferences that override other subtitle tracks of the same language
+(such as preferring hearing-impaired subtitles),
+the player will always prioritize the track that matches those preferences instead.</p>
+   </doc-panel>
+</doc-panels>
 <doc-anchor-target id="correct-tagging">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#correct-tagging">#</doc-anchor-trigger>
         <span>Correct Tagging</span>
     </h3>
 </doc-anchor-target>
-<p>The <code v-pre>Properties</code> tab allows you tag each track with various flags. Tagging a track correctly is very important and must be done correctly because proper tagging enables a player to autoselect the correct language streams for audio and subtitles. Tags can be edited in the MKVToolNix or mkvpropedit without remuxing.</p>
+<p>The <code v-pre>Properties</code> tab in MKVToolNix allows you to tag each track with various flags.
+Tagging a track correctly is very important
+because it enables players to automatically select the correct language streams for audio and subtitles.
+Tags can be edited in MKVToolNix or mkvpropedit without remuxing.</p>
+<p>The following suggestions assume you&#x27;re working with an average anime release.
+If you&#x27;re working with a different format, you should apply the suggestions accordingly.</p>
 <doc-panels>
    <doc-panel id="video-track" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M9.5 15.584V8.416a.5.5 0 0 1 .77-.42l5.576 3.583a.5.5 0 0 1 0 .842l-5.576 3.584a.5.5 0 0 1-.77-.42Z"/><path d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12Zm11-9.5A9.5 9.5 0 0 0 2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5Z"/></g></g></svg> Video track</template>
 <ul>
-<li>You can leave the language tag as <code v-pre>und</code>. There&#x27;s not much documentation about this but the official examples leave it as <code v-pre>und</code> and I haven&#x27;t found any issues with or without the language tag on a video track. Feel free to correct me if you find otherwise.</li>
-<li>Mark it as <code v-pre>Default</code>.</li>
-<li>Mention the name of the <code v-pre>Encoder/Group</code> or simply region like <code v-pre>JPNBD</code> or <code v-pre>ITABD</code> if it&#x27;s untouched BluRay Remux.</li>
+<li><strong>Name</strong>: Optionally set the track name to the <code v-pre>Encoder/Group</code> or source region (e.g., <code v-pre>JPNBD</code>, <code v-pre>ITABD</code>).</li>
+<li><strong>Language</strong>: Set to <code v-pre>und</code>. While you could use the source region&#x27;s language, it&#x27;s not well-documented how players interpret this, so it&#x27;s safer to use <code v-pre>und</code>.</li>
 </ul>
    </doc-panel>
    <doc-panel id="audio-tracks" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M11.553 3.064A.75.75 0 0 1 12 3.75v16.5a.75.75 0 0 1-1.255.555L5.46 16H2.75A1.75 1.75 0 0 1 1 14.25v-4.5C1 8.784 1.784 8 2.75 8h2.71l5.285-4.805a.752.752 0 0 1 .808-.13ZM10.5 5.445l-4.245 3.86a.748.748 0 0 1-.505.195h-3a.25.25 0 0 0-.25.25v4.5c0 .138.112.25.25.25h3c.187 0 .367.069.505.195l4.245 3.86Zm8.218-1.223a.75.75 0 0 1 1.06 0c4.296 4.296 4.296 11.26 0 15.556a.75.75 0 0 1-1.06-1.06 9.5 9.5 0 0 0 0-13.436.75.75 0 0 1 0-1.06Z"/><path d="M16.243 7.757a.75.75 0 1 0-1.061 1.061 4.5 4.5 0 0 1 0 6.364.75.75 0 0 0 1.06 1.06 6 6 0 0 0 0-8.485Z"/></g></g></svg> Audio Tracks</template>
 <ul>
-<li>Mention the codec, channels, and quality in the <code v-pre>Name</code> field.</li>
-<li>Language tag must be used appropriately reflecting the language of the audio.</li>
-<li>Audio tracks must not be marked as <code v-pre>Forced</code>.</li>
-<li>Regular <code v-pre>Japanese</code> audio must be tagged as <code v-pre>jpn</code> and marked as <code v-pre>Default</code>.</li>
-<li>Regular <code v-pre>English</code> audio must be tagged as <code v-pre>eng</code> and marked as <code v-pre>Default</code>.</li>
-<li>Any and all other regular audio tracks (e.g Spanish dub, German dub, etc) must be tagged with their respective language tag and marked as <code v-pre>Default</code>.</li>
-<li>If you have multiple dialects of the same language, they must be tagged with the dialect and mentioned in the <code v-pre>Name</code> field. For example, Castilian Spanish must be tagged as <code v-pre>es-ES</code> while Latin American Spanish must be tagged as <code v-pre>es-419</code>.</li>
-<li>Any and all non-Regular/Specialized tracks (e.g <code v-pre>commentary</code>, <code v-pre>descriptive audio</code>, etc) must be tagged with their respective flags and language but must not be marked as <code v-pre>Default</code></li>
+<li><strong>Name</strong>: Include the codec, channels, and optionally the bitrate if applicable (e.g., <code v-pre>FLAC 5.1</code>, <code v-pre>Opus 2.0 @ 192kb/s</code>).</li>
+<li><strong>Default</strong>: Tag regular audio tracks as <code v-pre>Default</code>.
+<ul>
+<li>Specialized tracks (commentary, SDH, etc.) must be tagged with their respective flags and <strong>not</strong> as <code v-pre>Default</code>.</li>
+</ul>
+</li>
+<li><strong>Forced</strong>: Audio tracks must <strong>not</strong> be tagged as <code v-pre>Forced</code>.</li>
+<li><strong>Language</strong>: Must reflect the spoken language. Use <code v-pre>zxx</code> if there is no discernible language.
+<ul>
+<li>For multiple dialects, use the correct dialect tag (e.g. <code v-pre>es-ES</code> for Castilian Spanish, <code v-pre>es-419</code> for Latin American Spanish) and indicate the dialect in the <code v-pre>Name</code> field.</li>
+</ul>
+</li>
+<li><strong>Original Language</strong>: Tag the original audio language as <code v-pre>Original language</code>. For anime, this is typically the Japanese audio tracks.
+<ul>
+<li>Also apply this tag to commentary, descriptive, or other specialized audio tracks in the same language.</li>
+</ul>
+</li>
 </ul>
    </doc-panel>
    <doc-panel id="subtitle-tracks" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M9.197 10a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm-2.382 4a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm-1.581 4a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Z"/><path d="M4.125 0h15.75a4.11 4.11 0 0 1 2.92 1.205A4.11 4.11 0 0 1 24 4.125c0 1.384-.476 2.794-1.128 4.16-.652 1.365-1.515 2.757-2.352 4.104l-.008.013c-.849 1.368-1.669 2.691-2.28 3.97-.614 1.283-.982 2.45-.982 3.503a2.625 2.625 0 1 0 4.083-2.183.75.75 0 1 1 .834-1.247A4.126 4.126 0 0 1 19.875 24H4.5a4.125 4.125 0 0 1-4.125-4.125c0-2.234 1.258-4.656 2.59-6.902.348-.586.702-1.162 1.05-1.728.8-1.304 1.567-2.553 2.144-3.738H3.39c-.823 0-1.886-.193-2.567-1.035A3.647 3.647 0 0 1 0 4.125 4.125 4.125 0 0 1 4.125 0ZM15.75 19.875c0-1.38.476-2.786 1.128-4.15.649-1.358 1.509-2.743 2.343-4.086l.017-.028c.849-1.367 1.669-2.692 2.28-3.972.614-1.285.982-2.457.982-3.514A2.615 2.615 0 0 0 19.875 1.5a2.625 2.625 0 0 0-2.625 2.625c0 .865.421 1.509 1.167 2.009A.75.75 0 0 1 18 7.507H7.812c-.65 1.483-1.624 3.069-2.577 4.619-.334.544-.666 1.083-.98 1.612-1.355 2.287-2.38 4.371-2.38 6.137A2.625 2.625 0 0 0 4.5 22.5h12.193a4.108 4.108 0 0 1-.943-2.625ZM1.5 4.125c-.01.511.163 1.008.487 1.403.254.313.74.479 1.402.479h12.86a3.648 3.648 0 0 1-.499-1.882 4.11 4.11 0 0 1 .943-2.625H4.125A2.625 2.625 0 0 0 1.5 4.125Z"/></g></g></svg> Subtitle Tracks</template>
 <ul>
-<li>Language tag must be used appropriately reflecting the language of the subtitles.</li>
-<li>Regular subtitle tracks (i.e, <code v-pre>Full Subtitles</code>) must be tagged with the appropriate language and marked as <code v-pre>Default</code>.</li>
-<li>The forced track (i.e, <code v-pre>Signs/Songs</code>) must be tagged with the appropriate language and marked as <code v-pre>Forced</code>. This track should not be marked as <code v-pre>Default</code> because it is not a &quot;regular&quot; track; instead, it is a specialized one meant to be used with dubs. The language tag must be identical to the language tag of the audio track it is intended to be used with.</li>
-<li>There should only be one <code v-pre>Forced</code> track per language.</li>
-<li><code v-pre>Honorifics</code> track must be tagged as <code v-pre>enm</code> and <code v-pre>Default</code> but not <code v-pre>Forced</code>. <em>Note: This isn&#x27;t a Matroska standard but a widely accepted convention in the anime community. Commercial software like <a href="https://www.plex.tv/">Plex</a> also support this convention.</em></li>
-<li>If you have multiple dialects of the same language, they must be tagged with the dialect and mentioned in the <code v-pre>Name</code> field. For example, Castilian Spanish must be tagged as <code v-pre>es-ES</code> while Latin American Spanish must be tagged as <code v-pre>es-419</code>.</li>
-<li>Any and all non-regular/specialized tracks (e.g <code v-pre>commentary</code>, <code v-pre>SDH</code>, etc) must be tagged with their respective flags and language but must not be marked as <code v-pre>Default</code>.</li>
+<li><strong>Language</strong>: Must reflect the subtitle language.
+<ul>
+<li>For multiple dialects, use the correct dialect tag and mention it in the <code v-pre>Name</code> field (e.g., <code v-pre>es-ES</code> for Castilian Spanish, <code v-pre>es-419</code> for Latin American Spanish).</li>
+</ul>
+</li>
+<li><strong>Default</strong>: Regular subtitle tracks (<code v-pre>Full Subtitles</code>) must be tagged as <code v-pre>Default</code>.
+<ul>
+<li>If no subtitle tracks should be auto-selected (except <code v-pre>Forced</code> and special tracks), mark none as <code v-pre>Default</code>.</li>
+<li>Specialized tracks (commentary, SDH, etc.) must be tagged with their respective flags and <strong>not</strong> as <code v-pre>Default</code>.</li>
+<li>Closed captions must be tagged as <code v-pre>Hearing impaired</code>.</li>
+</ul>
+</li>
+<li><strong>Forced</strong>: The forced track (<code v-pre>Signs &amp; Songs</code>) must be tagged as <code v-pre>Forced</code>.
+<ul>
+<li>This track should <strong>not</strong> be tagged as <code v-pre>Default</code> since it&#x27;s specialized for use with dubs.</li>
+<li>The language tag must match the audio track it&#x27;s intended for. If the dub language is English, the language tag for its Signs &amp; Songs must also be <code v-pre>eng</code>.</li>
+<li>Use only one <code v-pre>Forced</code> track per language.</li>
+</ul>
+</li>
+<li><strong>Honorifics and other similar alternative tracks</strong>: Tag as <code v-pre>enm</code> and <code v-pre>Default</code>, but <strong>not</strong> <code v-pre>Forced</code>.
+<ul>
+<li><em>Note: This isn&#x27;t a Matroska standard but a widely accepted convention in the anime community. Commercial software like <a href="https://www.plex.tv/">Plex</a> supports this convention.</em></li>
+</ul>
+</li>
+<li><strong>Original Language</strong>: Tag subtitle tracks that match the original language audio track. For anime, this is typically a <em>closed captions</em> track.</li>
 </ul>
    </doc-panel>
    <doc-panel id="track-order" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3.604 3.089A.75.75 0 0 1 4 3.75V8.5h.75a.75.75 0 0 1 0 1.5h-3a.75.75 0 1 1 0-1.5h.75V5.151l-.334.223a.75.75 0 0 1-.832-1.248l1.5-1a.75.75 0 0 1 .77-.037ZM8.75 5.5a.75.75 0 0 0 0 1.5h11.5a.75.75 0 0 0 0-1.5H8.75Zm0 6a.75.75 0 0 0 0 1.5h11.5a.75.75 0 0 0 0-1.5H8.75Zm0 6a.75.75 0 0 0 0 1.5h11.5a.75.75 0 0 0 0-1.5H8.75ZM5.5 15.75c0-.704-.271-1.286-.72-1.686a2.302 2.302 0 0 0-1.53-.564c-.535 0-1.094.178-1.53.565-.449.399-.72.982-.72 1.685a.75.75 0 0 0 1.5 0c0-.296.104-.464.217-.564A.805.805 0 0 1 3.25 15c.215 0 .406.072.533.185.113.101.217.268.217.565 0 .332-.069.48-.21.657-.092.113-.216.24-.403.419l-.147.14c-.152.144-.33.313-.52.504l-1.5 1.5a.75.75 0 0 0-.22.53v.25c0 .414.336.75.75.75H5A.75.75 0 0 0 5 19H3.31l.47-.47c.176-.176.333-.324.48-.465l.165-.156a5.98 5.98 0 0 0 .536-.566c.358-.447.539-.925.539-1.593Z"/></g></g></svg> Track Order</template>
-<ul>
-<li>The track order also plays an important part in the automatic selection of tracks.</li>
-<li>Tracks should be grouped by language, with the regular track being the first within its language group.</li>
-<li>Recommended track order is:
+<p>Track order determines which track will be automatically selected by the player
+when all tracks are correctly tagged
+and the user has no specific preferences set.</p>
+<p>Tracks should be grouped by <em>language</em>,
+with the regular track first within each language group.</p>
+<p>The recommended track order is:</p>
 <ol>
 <li>Video</li>
-<li>Original audio group
+<li>Original language audio group
 <ol>
-<li>Original regular audio</li>
-<li>Original Specialized audio (commentary, descriptive, etc)</li>
+<li>Original language regular audio</li>
+<li>Original language specialized audio (commentary, descriptive, etc)</li>
 </ol>
 </li>
 <li>Dub audio group
@@ -314,14 +610,41 @@ You&#x27;ll see 3 tabs here:</p>
 </ol>
 </li>
 </ol>
-</li>
-<li>When you have two regular tracks of the same language, let&#x27;s say a <code v-pre>Japanese 2.0</code> track and a <code v-pre>Japanese 5.1</code> track, and you have correctly tagged them, you&#x27;ll notice that these end up being tagged identically. In this case, players will fall back to using track order to select the audio track. Now, it&#x27;s pretty much up to your personal preference as to which one goes first and ends up being the real default for the end user.</li>
-</ul>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>MKVToolNix will sort track types
+(video, audio, subtitles)
+in the correct order by default in the UI.
+However, it will not automatically arrange the tracks
+within each language group.</p>
+        </div>
+    </div>
+</div>
+<p>For multiple &quot;regular&quot; tracks of the same language
+(e.g., <code v-pre>Japanese 2.0</code> and <code v-pre>Japanese 5.1</code> tracks),
+these will be tagged identically.
+In this case,
+players typically fall back to track order for selection.
+It&#x27;s up to personal preference which track should go first,
+but it&#x27;s recommended to either put the &quot;original&quot; audio track first
+(in the case of a 2.0 downmix or 5.1 upmix),
+or the most well-supported track (typically the 2.0 track).</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -337,57 +660,69 @@ You&#x27;ll see 3 tabs here:</p>
    </doc-panel>
 </doc-panels>
 <doc-panels>
-   <doc-panel id="practical-example-basic" collapsed>
+   <doc-panel id="practical-example---basic" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3.5 3.75a.25.25 0 0 1 .25-.25h13.5a.25.25 0 0 1 .25.25v10a.75.75 0 0 0 1.5 0v-10A1.75 1.75 0 0 0 17.25 2H3.75A1.75 1.75 0 0 0 2 3.75v16.5c0 .966.784 1.75 1.75 1.75h7a.75.75 0 0 0 0-1.5h-7a.25.25 0 0 1-.25-.25V3.75Z"/><path d="M6.25 7a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Zm-.75 4.75a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75Zm16.28 4.53a.75.75 0 1 0-1.06-1.06l-4.97 4.97-1.97-1.97a.75.75 0 1 0-1.06 1.06l2.5 2.5a.75.75 0 0 0 1.06 0l5.5-5.5Z"/></g></g></svg> Practical Example - Basic</template>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>Track</th>
+<th>No.</th>
+<th>Track Type</th>
 <th>Language</th>
 <th>Name</th>
+<th>Original</th>
 <th>Default</th>
 <th>Forced</th>
-<th>Additional Flags</th>
+<th>Other Flags</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>1</td>
 <td>Video</td>
-<td>jpn</td>
-<td>Group</td>
-<td><span class="docs-emoji">&#x2705;</span></td>
-<td><span class="docs-emoji">&#x274C;</span></td>
+<td>und</td>
+<td>Group Tag</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>None</td>
 </tr>
 <tr>
-<td>Audio #1</td>
+<td>2</td>
+<td>Audio</td>
 <td>jpn</td>
 <td>FLAC 2.0</td>
 <td><span class="docs-emoji">&#x2705;</span></td>
-<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>N/A</td>
 <td>None</td>
 </tr>
 <tr>
-<td>Audio #2</td>
+<td>3</td>
+<td>Audio</td>
 <td>eng</td>
 <td>Opus 5.1 @ 320kb/s</td>
-<td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>N/A</td>
 <td>None</td>
 </tr>
 <tr>
+<td>4</td>
 <td>Subtitle #1</td>
 <td>eng</td>
 <td>Full Subtitles [Fansub]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td>None</td>
 </tr>
 <tr>
+<td>5</td>
 <td>Subtitle #2</td>
 <td>eng</td>
-<td>Signs/Songs [Fansub]</td>
+<td>Signs &amp; Songs [Fansub]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td>None</td>
@@ -396,145 +731,189 @@ You&#x27;ll see 3 tabs here:</p>
 </table>
 </div>
    </doc-panel>
-   <doc-panel id="practical-example-advanced" collapsed>
+   <doc-panel id="practical-example---advanced" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3.5 3.75a.25.25 0 0 1 .25-.25h13.5a.25.25 0 0 1 .25.25v10a.75.75 0 0 0 1.5 0v-10A1.75 1.75 0 0 0 17.25 2H3.75A1.75 1.75 0 0 0 2 3.75v16.5c0 .966.784 1.75 1.75 1.75h7a.75.75 0 0 0 0-1.5h-7a.25.25 0 0 1-.25-.25V3.75Z"/><path d="M6.25 7a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Zm-.75 4.75a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75Zm16.28 4.53a.75.75 0 1 0-1.06-1.06l-4.97 4.97-1.97-1.97a.75.75 0 1 0-1.06 1.06l2.5 2.5a.75.75 0 0 0 1.06 0l5.5-5.5Z"/></g></g></svg> Practical Example - Advanced</template>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>Track</th>
+<th>No.</th>
+<th>Track Type</th>
 <th>Language</th>
 <th>Name</th>
+<th>Original</th>
 <th>Default</th>
 <th>Forced</th>
-<th>Additional Flags</th>
+<th>Other Flags</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>1</td>
 <td>Video</td>
-<td>jpn</td>
-<td>Group</td>
-<td><span class="docs-emoji">&#x2705;</span></td>
-<td><span class="docs-emoji">&#x274C;</span></td>
+<td>und</td>
+<td>Group Tag</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>None</td>
 </tr>
 <tr>
-<td>Audio #1</td>
+<td>2</td>
+<td>Audio</td>
 <td>jpn</td>
 <td>FLAC 5.1</td>
 <td><span class="docs-emoji">&#x2705;</span></td>
-<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>N/A</td>
 <td>None</td>
 </tr>
 <tr>
-<td>Audio #2</td>
+<td>3</td>
+<td>Audio</td>
 <td>jpn</td>
 <td>FLAC 2.0</td>
 <td><span class="docs-emoji">&#x2705;</span></td>
-<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>N/A</td>
 <td>None</td>
 </tr>
 <tr>
-<td>Audio #3</td>
+<td>4</td>
+<td>Audio</td>
 <td>jpn</td>
 <td>FLAC 2.0 - Japanese Commentary</td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
+<td>N/A</td>
 <td>Commentary</td>
 </tr>
 <tr>
-<td>Audio #4</td>
+<td>5</td>
+<td>Audio</td>
 <td>eng</td>
 <td>Opus 5.1 @ 320kb/s</td>
-<td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>N/A</td>
 <td>None</td>
 </tr>
 <tr>
-<td>Audio #5</td>
+<td>6</td>
+<td>Audio</td>
 <td>eng</td>
 <td>Opus 2.0 @ 192kb/s - Commentary</td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
+<td>N/A</td>
 <td>Commentary</td>
 </tr>
 <tr>
-<td>Audio #6</td>
+<td>7</td>
+<td>Audio</td>
 <td>eng</td>
 <td>Opus 2.0 @ 192kb/s - Descriptive</td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
+<td>N/A</td>
 <td>Visual-impaired</td>
 </tr>
 <tr>
+<td>8</td>
 <td>Subtitle #1</td>
 <td>eng</td>
 <td>Full Subtitles [Fansub]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td>None</td>
 </tr>
 <tr>
+<td>9</td>
 <td>Subtitle #2</td>
 <td>enm</td>
 <td>Honorifics [Fansub]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td>None</td>
 </tr>
 <tr>
+<td>10</td>
 <td>Subtitle #3</td>
 <td>eng</td>
 <td>Japanese Commentary [USABD]</td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td>Commentary</td>
 </tr>
 <tr>
+<td>11</td>
 <td>Subtitle #4</td>
 <td>eng</td>
-<td>Signs/Songs [Fansub]</td>
+<td>Signs &amp; Songs [Fansub]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td>None</td>
 </tr>
 <tr>
+<td>12</td>
 <td>Subtitle #5</td>
 <td>eng</td>
 <td>SDH [USABD]</td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td>Hearing-impaired</td>
 </tr>
 <tr>
+<td>13</td>
 <td>Subtitle #6</td>
 <td>eng</td>
 <td>English Commentary [USABD]</td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td>Commentary</td>
 </tr>
 <tr>
+<td>14</td>
 <td>Subtitle #7</td>
+<td>jpn</td>
+<td>Closed Captions [Netflix]</td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td>Hearing-impaired</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Subtitle #8</td>
 <td>es-ES</td>
 <td>Full Subtitles (Castilian) [SPABD]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td>None</td>
 </tr>
 <tr>
-<td>Subtitle #8</td>
+<td>16</td>
+<td>Subtitle #9</td>
 <td>es-419</td>
 <td>Full Subtitles (Latin American) [SPABD]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td>None</td>
 </tr>
 <tr>
-<td>Subtitle #9</td>
+<td>17</td>
+<td>Subtitle #10</td>
 <td>de</td>
 <td>Full Subtitles [GERBD]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td>None</td>
@@ -554,12 +933,13 @@ You&#x27;ll see 3 tabs here:</p>
    <doc-panel id="forced-flag" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M13 7.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm-3 3.75a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v4.25h.75a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5h.75V12h-.75a.75.75 0 0 1-.75-.75Z"/><path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1ZM2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5 9.5 9.5 0 0 0 2.5 12Z"/></g></g></svg> Forced Flag</template>
 <p><img src="../../static/advanced/muxing/forced_track_flag.png" alt="Forced Flag" /></p>
-<p>This flag DOES NOT mean that a subtitle track will be permanently on the screen, which is a common misconception. Forced subtitles only provide subtitles when the characters speak a foreign or alien language, or a sign, flag, or other text in a scene is not translated in the localization and dubbing process. In our case, it&#x27;s supposed to be displayed whenever the English dub has untranslated things like Japanese Signs and Songs like Opening/Ending or Inserts.</p>
+<p>This flag DOES NOT mean that a subtitle track will be permanently on the screen, which is a common misconception. Forced subtitles only provide subtitles when the characters speak a foreign or alien language, or a sign, flag, or other text in a scene is not translated in the localization and dubbing process. For anime, its purpose is to display subtitles whenever the English dub has untranslated things like Japanese Signs and Songs like Opening/Ending or Inserts.</p>
    </doc-panel>
    <doc-panel id="default-flag" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M13 7.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm-3 3.75a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v4.25h.75a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5h.75V12h-.75a.75.75 0 0 1-.75-.75Z"/><path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1ZM2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5 9.5 9.5 0 0 0 2.5 12Z"/></g></g></svg> Default Flag</template>
 <p><img src="../../static/advanced/muxing/default_track_flag.png" alt="Default Flag" /></p>
-<p>This flag DOES NOT mean that a track is going to be the default choice upon playback, instead it&#x27;s a hint for the player indicating that a given track SHOULD be eligible to be automatically selected as the default track for a given language. If no tracks in a given language have the default track flag set, then all tracks in that language are eligible for automatic selection. This can be used to indicate that a track provides “regular service” suitable for users with default settings, as opposed to specialized services, such as commentary, hearing-impaired captions, or descriptive audio.</p>
+<p>This flag DOES NOT mean that a track is the default choice during playback, but instead it&#x27;s a hint for the player that a given track SHOULD be eligible to be automatically selected as the default track for the given language. If no tracks in a given language have the default track flag set, then no subtitle tracks will be automatically selected <em>unless</em> there is an accompanying <code v-pre>Forced</code> track for the selected audio track.</p>
+<p>This flag is used to indicate that a track provides “regular service” suitable for users with default settings, as opposed to specialized services such as commentary, hearing-impaired captions, or descriptive audio.</p>
    </doc-panel>
    <doc-panel id="player-support" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M13 7.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm-3 3.75a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v4.25h.75a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5h.75V12h-.75a.75.75 0 0 1-.75-.75Z"/><path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1ZM2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5 9.5 9.5 0 0 0 2.5 12Z"/></g></g></svg> Player Support</template>
@@ -568,7 +948,9 @@ You&#x27;ll see 3 tabs here:</p>
 <thead>
 <tr>
 <th>Player</th>
-<th>Respects Matroska Tags</th>
+<th>Default</th>
+<th>Forced</th>
+<th>Original Language</th>
 <th>Additional Notes</th>
 </tr>
 </thead>
@@ -576,41 +958,53 @@ You&#x27;ll see 3 tabs here:</p>
 <tr>
 <td><a href="https://mpv.io/">mpv</a></td>
 <td>Yes</td>
+<td>Yes</td>
+<td>No</td>
 <td></td>
 </tr>
 <tr>
 <td><a href="https://www.videolan.org/vlc/">VLC</a></td>
-<td>Mostly</td>
-<td>Doesn&#x27;t respect the <code v-pre>Forced</code> flag.</td>
+<td>Yes</td>
+<td>No</td>
+<td>Unknown</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="https://www.plex.tv/">Plex</a></td>
-<td>Mostly</td>
-<td>Plex respects Matroska tags (such as Forced, SDH, language, etc) with the exception of the <code v-pre>Default</code> flag. Track order takes precedence over the <code v-pre>Default</code> flag.</td>
+<td>No</td>
+<td>Yes</td>
+<td>Unknown</td>
+<td>Track order takes precedence over the <code v-pre>Default</code> flag.</td>
 </tr>
 <tr>
 <td><a href="https://jellyfin.org/">Jellyfin</a></td>
 <td>Yes</td>
+<td>Yes</td>
+<td>Unknown</td>
 <td></td>
 </tr>
 <tr>
 <td><a href="https://kodi.tv/">Kodi</a></td>
 <td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
 <td></td>
 </tr>
 <tr>
 <td><a href="https://github.com/clsid2/mpc-hc/">clsid2/MPC-HC</a></td>
-<td>Mostly</td>
-<td>Doesn&#x27;t respect the <code v-pre>Forced</code> flag.</td>
+<td>Yes</td>
+<td>No</td>
+<td>Unknown</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -626,7 +1020,7 @@ You&#x27;ll see 3 tabs here:</p>
    </doc-panel>
    <doc-panel id="full-spec" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M13 7.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm-3 3.75a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v4.25h.75a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5h.75V12h-.75a.75.75 0 0 1-.75-.75Z"/><path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1ZM2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5 9.5 9.5 0 0 0 2.5 12Z"/></g></g></svg> Full spec</template>
-<p>Everything I&#x27;ve covered in this section is a simplified version of the full spec, which you can read <a href="https://www.matroska.org/technical/notes.html">here</a> if you want to.</p>
+<p>Everything covered in this section is a simplified version of the full spec, which you can read <a href="https://www.matroska.org/technical/notes.html">here</a> if you want to.</p>
    </doc-panel>
 </doc-panels>
 <doc-anchor-target id="adding-layoutres-to-ass-files">
@@ -653,10 +1047,10 @@ You&#x27;ll see 3 tabs here:</p>
 <li>Set the appropriate values and click <code v-pre>OK</code>.</li>
 </ol>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -677,7 +1071,7 @@ You&#x27;ll see 3 tabs here:</p>
 </doc-anchor-target>
 <p><figure class="content-center">
     <a href="../../static/advanced/muxing/mkvtoolnix6.png">
-        <img src="../../static/advanced/muxing/mkvtoolnix6.png" alt="Font attachments">
+        <img src="../../static/advanced/muxing/mkvtoolnix6.png" alt="Font attachments" class="rounded-image-rounded border-image-border border-image-border-width" />
     </a>
     <figcaption class="caption">Font attachments</figcaption>
 </figure>
@@ -696,10 +1090,10 @@ You&#x27;ll see 3 tabs here:</p>
 <li>On 16:9 displays where cropping would result in black bars regardless, it&#x27;s still beneficial because it avoids <a href="https://silentaperture.gitlab.io/mdbook-guide/filtering/dirty_lines.html">dirty lines</a> caused by scaling</li>
 </ul>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -753,17 +1147,17 @@ You&#x27;ll see 3 tabs here:</p>
 </doc-anchor-target>
 <p><figure class="content-center">
     <a href="../../static/advanced/muxing/mkvtoolnix5.png">
-        <img src="../../static/advanced/muxing/mkvtoolnix5.png" alt="Container Delay">
+        <img src="../../static/advanced/muxing/mkvtoolnix5.png" alt="Container Delay" class="rounded-image-rounded border-image-border border-image-border-width" />
     </a>
     <figcaption class="caption">Container Delay</figcaption>
 </figure>
 </p>
 <p>MKVToolNix allows you to set positive or negative delays on each track in order to synchronize them with the designated video track. This is usually the easiest way to sync different tracks together, but you should be careful with it. Avoid delays exceeding 1001ms, as they may lead to playback problems on different media players. Instead, consider syncing each track using their specific tools and only utilize container delays for smaller adjustments as a final resort.</p>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -792,19 +1186,19 @@ These alternative presentations are lost once decoded, even if they were to be e
 <doc-tab v-cloak id="single-file">
 <template #title>Single File</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">mkvpropedit &quot;file.mkv&quot; --tags all: --add-track-statistics-tags --edit info --delete date --set muxing-application=&quot;&quot; --set writing-application=&quot;&quot;</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">mkvpropedit &quot;file.mkv&quot; --tags all: --add-track-statistics-tags --edit info --delete date --set muxing-application=&quot;&quot; --set writing-application=&quot;&quot;</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="batch">
 <template #title>Batch</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">for %X IN (*.mkv) do mkvpropedit &quot;%X&quot; --tags all: --add-track-statistics-tags --edit info --delete date --set muxing-application=&quot;&quot; --set writing-application=&quot;&quot;</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">for %X IN (*.mkv) do mkvpropedit &quot;%X&quot; --tags all: --add-track-statistics-tags --edit info --delete date --set muxing-application=&quot;&quot; --set writing-application=&quot;&quot;</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="shell">
 <template #title>Shell</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">for file in *.mkv; do mkvpropedit &quot;$file&quot; --tags all: --add-track-statistics-tags --edit info --delete date --set muxing-application=&quot;&quot; --set writing-application=&quot;&quot;; done</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">for file in *.mkv; do mkvpropedit &quot;$file&quot; --tags all: --add-track-statistics-tags --edit info --delete date --set muxing-application=&quot;&quot; --set writing-application=&quot;&quot;; done</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
@@ -812,10 +1206,10 @@ These alternative presentations are lost once decoded, even if they were to be e
    <doc-panel id="mkvpropedit-command-to-retag-an-mkv-file-without-remuxing" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M9.25 12a.75.75 0 0 1-.22.53l-2.75 2.75a.75.75 0 0 1-1.06-1.06L7.44 12 5.22 9.78a.75.75 0 1 1 1.06-1.06l2.75 2.75c.141.14.22.331.22.53Zm2 2a.75.75 0 0 0 0 1.5h5a.75.75 0 0 0 0-1.5h-5Z"/><path d="M0 4.75C0 3.784.784 3 1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25Zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V4.75a.25.25 0 0 0-.25-.25Z"/></g></g></svg> mkvpropedit command to retag an <code v-pre>mkv</code> file without remuxing</template>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -824,7 +1218,12 @@ These alternative presentations are lost once decoded, even if they were to be e
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>This is an example, you&#x27;ll have to edit the command further to apply to your specific file</p>
+<p>This is an example,
+you&#x27;ll have to edit the command further
+to apply to your specific file.
+If your filename has a CRC in it,
+you must also update that
+to reflect the new CRC.</p>
         </div>
     </div>
 </div>
@@ -832,27 +1231,27 @@ These alternative presentations are lost once decoded, even if they were to be e
 <doc-tab v-cloak id="windows">
 <template #title>Windows</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-batch"><code v-pre class="language-batch">for %X in (*.mkv) do mkvpropedit &quot;%X&quot; --add-track-statistics-tags --edit info --delete title ^
+<pre translate="no" class="language-batch"><code v-pre class="language-batch">for %X in (*.mkv) do mkvpropedit &quot;%X&quot; --add-track-statistics-tags --edit info --delete title ^
 --edit track:v1 --set name=&quot;Encode Group&quot;              --set language=jpn --set flag-default=1 ^
 --edit track:a1 --set name=&quot;FLAC 2.0&quot;                  --set language=jpn --set flag-default=1 ^
 --edit track:a2 --set name=&quot;Opus 5.1 @ 320kb/s&quot;        --set language=eng --set flag-default=1 ^
 --edit track:s1 --set name=&quot;Full Subtitles [Fansub]&quot;   --set language=eng --set flag-default=1 --set flag-forced=0 ^
 --edit track:s2 --set name=&quot;Honorifics [Fansub]&quot;       --set language=enm --set flag-default=1 --set flag-forced=0 ^
---edit track:s3 --set name=&quot;Signs/Songs [Fansub]&quot;      --set language=eng --set flag-default=0 --set flag-forced=1 ^
+--edit track:s3 --set name=&quot;Signs &amp; Songs [Fansub]&quot;      --set language=eng --set flag-default=0 --set flag-forced=1 ^
 --edit track:s4 --set name=&quot;Full Subtitles [Official]&quot; --set language=spa --set flag-default=1 --set flag-forced=0</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="linux">
 <template #title>Linux</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">for file in *.mkv; do
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">for file in *.mkv; do
   mkvpropedit &quot;${file}&quot; --add-track-statistics-tags --edit info --delete title \
   --edit track:v1 --set name=&quot;Encode Group&quot;              --set language=jpn --set flag-default=1 \
   --edit track:a1 --set name=&quot;FLAC 2.0&quot;                  --set language=jpn --set flag-default=1 \
   --edit track:a2 --set name=&quot;Opus 5.1 @ 320kb/s&quot;        --set language=eng --set flag-default=1 \
   --edit track:s1 --set name=&quot;Full Subtitles [Fansub]&quot;   --set language=eng --set flag-default=1 --set flag-forced=0 \
   --edit track:s2 --set name=&quot;Honorifics [Fansub]&quot;       --set language=enm --set flag-default=1 --set flag-forced=0 \
-  --edit track:s3 --set name=&quot;Signs/Songs [Fansub]&quot;      --set language=eng --set flag-default=0 --set flag-forced=1 \
+  --edit track:s3 --set name=&quot;Signs &amp; Songs [Fansub]&quot;      --set language=eng --set flag-default=0 --set flag-forced=1 \
   --edit track:s4 --set name=&quot;Full Subtitles [Official]&quot; --set language=spa --set flag-default=1 --set flag-forced=0
 done</code></pre>
 </doc-codeblock></div>
@@ -865,29 +1264,29 @@ done</code></pre>
                                 <!-- Required only on API pages -->
                                 <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
                             </div>
-                            <footer class="clear-both">
+                            <footer id="retype-content-footer" class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/Snaacky/thewiki/edit/master/docs/advanced/muxing.md" target="_blank" rel="noopener">
+                                    <a id="retype-edit-this-page" class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-body-link font-body-link-weight hover:text-body-link-hover hover:underline" href="https://github.com/Snaacky/thewiki/edit/master/docs/advanced/muxing.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
                                 </div>
                             
-                                <nav class="flex mt-14">
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../resources/glossary/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../resources/glossary/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
-                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
                                                 <span class="block mt-1">Glossary</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../advanced/naming/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../advanced/naming/">
                                             <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
                                                 <span class="block mt-1">Naming</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
@@ -897,24 +1296,24 @@ done</code></pre>
                             </footer>
                         </main>
                 
-                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between">
-                                <div>
+                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div id="retype-footer-links" class="print:hidden">
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"></div>
+                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"></div>
                             </footer>
                         </div>
                     </div>
                 
                     <!-- Rendered if sidebar right is enabled -->
                     <!-- Sidebar right skeleton-->
-                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
                         <div class="pl-5">
-                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
                         </div>
                     </div>
                 
@@ -930,7 +1329,7 @@ done</code></pre>
     </div>
 
 
-    <div id="docs-overlay-target"></div>
+    <div id="retype-overlay-target"></div>
 
     <script data-cfasync="false">window.__DOCS__ = { "title": "Muxing", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
