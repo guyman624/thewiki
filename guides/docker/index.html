@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.816295030904">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.816296170293">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.816295030904" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.816296170293" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.816295030904" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.816296170293" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.816295030904" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.816295030904" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.816296170293" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.816296170293" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -184,12 +184,11 @@
     </div>
 </div>
 
-<p>Docker is a piece of software that allows you to virtualize applications into containers, so that you don&#x27;t have to deal with dependency
-management, and can carry around a solution that&#x27;s easily deployable anywhere you go.</p>
-<p>It is especially useful in this case, as we will deploy an entire automation stack from a single config file!</p>
+<p>Docker is a piece of software that allows containerize applications, avoiding dependency managment and installation time, and can carry around a solution that&#x27;s easily deployable anywhere you go.</p>
+<p>In this tutorial we will deploy a whole automation stack from a single configuration file.</p>
 <p>The basic idea is that we will create a single &quot;compose&quot; file that tells the Docker engine what containers we want to download, and what configuration options we want to set for each one. A sample compose file is presented later in this guide, but we recommend reading through it, as you will need to change parts of it to match your setup. Take special note of <code v-pre>environment</code> variables, as those are essentially your settings options.</p>
 <p>This guide will cover how to setup a Docker stack for common media automation programs, namely: a torrent client, a usenet client, a VPN with a killswitch, Sonarr, Radarr, Autobrr, and Prowlarr. These applications work together to automatically download files from chosen indexers, based on user-defined filters.</p>
-<p>This guide is primarily focused on basic setup and deployment of these applications. For information and help with configuring and using them, please check the relevant documentation, or ask in #questions. We will cover some basic usecases but your needs will vary depending on what indexers you have access to. Our goal here is to get you acquainted with Docker Compose, and give you a good jumping off point.</p>
+<p>This guide is primarily focused on basic setup and deployment of these applications. For information and help with configuring and using them, please check the relevant documentation, or ask in #questions on Discord. We will cover some basic usecases but your needs will vary depending on what indexers you have access to. Our goal here is to get you acquainted with Docker Compose, and give you a good jumping off point.</p>
 <doc-anchor-target id="installing-docker">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#installing-docker">#</doc-anchor-trigger>
@@ -201,21 +200,20 @@ management, and can carry around a solution that&#x27;s easily deployable anywhe
 <a href="https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository">here</a>, after which they can proceed onto the
 <a href="https://docs.docker.com/engine/install/linux-postinstall">post-installation steps</a>.
 Depending on how you&#x27;ve installed and configured Docker, you may need to append <code v-pre>sudo</code> before the commands listed in the rest of this guide.</p>
-<doc-anchor-target id="setting-up-a-docker-network">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#setting-up-a-docker-network">#</doc-anchor-trigger>
-        <span>Setting up a Docker network</span>
-    </h2>
-</doc-anchor-target>
-<p>Now we&#x27;ll be setting up a network so that our containers can communicate with each other. This step&#x27;s quite simple, it&#x27;s just <code v-pre>docker network create guide</code>. A list of all your current networks can be seen with <code v-pre>docker network ls</code>.</p>
+<!--- 
+i dont think this is necessary anymore...
+## Setting up a Docker network
+
+Now we'll be setting up a network so that our containers can communicate with each other. This step's quite simple, it's just `docker network create guide`. A list of all your current networks can be seen with `docker network ls`.
+-->
 <doc-anchor-target id="preparing-the-vpn">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#preparing-the-vpn">#</doc-anchor-trigger>
         <span>Preparing the VPN</span>
     </h2>
 </doc-anchor-target>
-<p>For maximum privacy and security we&#x27;ll be tunnelling our usenet and torrent clients through a VPN. Radarr, Sonarr and Prowlarr however won&#x27;t go through that, as some trackers and indexers might not like it if you send requests from a random non-whitelisted IP. This guide reccomends Gluetun, but the process is similar for other VPN container options.</p>
-<p>What we need is a configuration file, obtained from your chosen VPN provider. Wireguard is preferable and recommended over OpenVPN. This configuration file contains the info needed to allow Gluetun, (or your VPN client of choice,) to connect to your VPN provider&#x27;s servers.</p>
+<p>For maximum privacy and security we&#x27;ll be tunnelling our usenet and torrent clients through a VPN. Radarr, Sonarr and Prowlarr however won&#x27;t go through it, as some trackers and indexers forbid this. This guide reccomends Gluetun, but the process is similar for other VPN container options.</p>
+<p>What we need is a configuration file, usually <code v-pre>.conf</code>, obtained from your chosen VPN provider. Wireguard is preferable and recommended over OpenVPN. This configuration file contains the info needed to allow Gluetun, (or your VPN client of choice,) to connect to your VPN provider&#x27;s servers.</p>
 <p>The process for getting a config file varies based on your provider, so we recommend searching for it online, or your provider&#x27;s website. <a href="https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers">This page</a> also contains per-provider instructions for getting a config file, as well as some other configuration that we will cover shortly. If possible, make sure to enable forwarding of one or more ports for use with torrent and usenet clients.</p>
 <doc-anchor-target id="deploying-everything-using-docker-compose">
     <h2>
@@ -223,21 +221,9 @@ Depending on how you&#x27;ve installed and configured Docker, you may need to ap
         <span>Deploying everything using <code v-pre>docker compose</code></span>
     </h2>
 </doc-anchor-target>
-<p>Now that we&#x27;ve gotten everything ready we can finally set up the stack. Paste the following into a file called <code v-pre>compose.yaml</code>. We&#x27;d recommend this file being a directory that is purely for this Docker stack, such as <code v-pre>/home/user/projects/automation/</code>. As a note, you will need to be working from inside this directory when running <code v-pre>docker compose</code> commands. Please take the time to read the notes included in this file, as they have further instructions and will need to be completed for everything to function.</p>
-<p>We would also recommend sorting your media-related folders in the following way for ease of use:</p>
-<ul>
-<li><code v-pre>/home/user/data/torrents/</code> - where you torrent client will save files.</li>
-<li><code v-pre>/home/user/data/usenet</code> - where your usenet client will save files.</li>
-<li><code v-pre>/home/user/data/media</code> - where your hardlinked files will reside, so that they can be read by your media server (Plex/Jellyfin/etc.)
-<ul>
-<li><code v-pre>/home/user/data/media/tv</code> - where Sonarr will hardlink files.</li>
-<li><code v-pre>/home/user/data/media/movies</code> - where Radarr will hardlink files.</li>
-<li>You can take this concept further and make more subfolders in <code v-pre>media</code> if you&#x27;d like to have one more than one Sonarr or Radarr instance. People
-sometimes do this if they&#x27;d like both a 4K and an HD version of a piece of media, as both the *arrs can only hardlink one version at a time.</li>
-</ul>
-</li>
-</ul>
-<p>Paths for Docker are extremely important as configuring them incorrectly can break hardlinking and cause you to waste space!</p>
+<p>Now that we&#x27;ve gotten everything ready we can finally set up the stack. Create a new folder to house all everything compose related, for example <code v-pre>/home/user/projects/automation</code>. Inside this folder, make a new file named <code v-pre>compose.yaml</code>, and paste in the following:</p>
+<doc-panel id="composeyaml" collapsed>
+    <template #title>compose.yaml</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml"># Some notes about some important things so that they don't need to be repeated for every container.
 #
@@ -392,10 +378,25 @@ networks:
   guide:
     external: true</code></pre>
 </doc-codeblock></div>
-<p>After all of that you&#x27;ll want to go into <code v-pre>/home/user/projects/automation</code> and run <code v-pre>docker compose up -d</code>. This will deploy all of the containers
-in a detached mode, but since it&#x27;s your first time running them, Docker will pull the images for each of these containers.</p>
-<p>Once all of that&#x27;s done, you&#x27;ll want to run <code v-pre>docker compose down</code>, which will shut down each of the containers.</p>
-<p>By running in detached mode, we also block any terminal output from our containers. Some of these outputs contain vital information for setting up your container the first time, specifically the output from Qbittorrent. To view it, run <code v-pre>docker compose up yourcontainer</code>. Perform any steps needed with the window still open, as closing it will stop the container. To start it normally, run <code v-pre>docker compose up -d</code> again, or <code v-pre>docker compose up -d yourcontainer</code>. <code v-pre>docker compose start</code> can also be used to start containers that have already been created and do not need updating, but <code v-pre>docker compose up -d</code> is generally recommended by this guide to avoid issues.</p>
+</doc-panel>
+<p>We would also recommend sorting your media-related folders in the following way for ease of use:</p>
+<ul>
+<li><code v-pre>/home/user/data/torrents/</code> - where you torrent client will save files.</li>
+<li><code v-pre>/home/user/data/usenet</code> - where your usenet client will save files.</li>
+<li><code v-pre>/home/user/data/media</code> - where your hardlinked files will reside, so that they can be read by your media server (Plex/Jellyfin/etc.)
+<ul>
+<li><code v-pre>/home/user/data/media/tv</code> - where Sonarr will hardlink files.</li>
+<li><code v-pre>/home/user/data/media/movies</code> - where Radarr will hardlink files.</li>
+<li>You can take this concept further and make more subfolders in <code v-pre>media</code> if you&#x27;d like to have one more than one Sonarr or Radarr instance. People
+sometimes do this if they&#x27;d like both a 4K and an HD version of a piece of media, as both the *arrs can only hardlink one version at a time.</li>
+</ul>
+</li>
+</ul>
+<p>Paths for Docker are extremely important as configuring them incorrectly can break hardlinking and cause you to waste space!</p>
+<p>After all of that you&#x27;ll want to go into <code v-pre>/home/user/projects/automation</code> and run <code v-pre>docker compose up -d</code>.  This will deploy all of the containers
+in a <code v-pre>-d</code>etached mode, but since it&#x27;s your first time running them, Docker will pull the images for each of these containers. Any <code v-pre>docker compose</code> command must be run within the folder that contains <code v-pre>compose.yaml</code>.</p>
+<p>Another useful command is <code v-pre>docker compose down</code>, which will shut down each of the containers.</p>
+<p>By running in detached mode, we also block any terminal output from our containers. Some of these outputs contain vital information for setting up your container the first time, specifically the output from Qbittorrent. To view the console output, you can run <code v-pre>docker logs &lt;name of container&gt;</code>, for example <code v-pre>docker logs qbittorrent</code>.</p>
 <p>We recommend looking at the <code v-pre>man</code> page or official documentation for Docker to familiarize yourself with available commands. <code v-pre>docker pull</code>, <code v-pre>docker ps</code>, and <code v-pre>docker system prune</code> can be useful, for example. See documentation for info on what these do!</p>
 <doc-anchor-target id="setting-up-a-killswitch">
     <h2>
